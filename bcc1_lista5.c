@@ -1,5 +1,6 @@
 // Eugênio Pacceli Reis da Fonseca
 // 31/03/2014
+// deprecated
 
 void decrescente(int a, int b, int c){
 	int *nums = {a,b,c};
