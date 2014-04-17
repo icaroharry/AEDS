@@ -3,28 +3,41 @@
 #include <math.h>
 #include <time.h>
 
-double mediaVetor(void *v, int n, char type){
+double mediaVetor(const void *v, int n, int type){
     int i = 0;
-    int valorTotal = 0;
-    for(i = 0; i < n; i++){
-        if(type == "c")
-        valorTotal += v[i];
+    int intValorTotal = 0;
+    float floatValorTotal = 0;
+    if(type == 1) { //int
+    	for (i = 0; i < n; i++){
+    		const int *intV = v; 
+			intValorTotal += intV[i];
+    	}
+    	return intValorTotal/n;
     }
-    return valorTotal/n;
+    if(type == 2) { //float
+    	for (i = 0; i < n; i++){
+    		const float *floatV = v; 
+			floatValorTotal += floatV[i];
+    	}
+    	return floatValorTotal/n;
+    }
+	return -1; //error	
+	
+    
 }
 
 double desvioPadrao(int v[], int n){
-    double media = mediaVetor(v, n);
+    double media = mediaVetor(v, n, 1);
     double *desvio = malloc(n * sizeof(double));
     int i = 0;
     for(i = 0; i < n ; i++){
         desvio[i] = pow((v[i] - media), 2); //calcula o valor - a media e eleva ao quadrado
-        prinft("\n\n\n\n\n\n\n\ %f\n", desvio[i]);
+        //printf("\n\n\n\n\n\n\n\ %f \n", desvio[i]);
     }
-    return mediaVetor(desvio, n);
+    return mediaVetor(desvio, n, 2);
 }
 
-int main(){
+int main() {
     int valores[100];
     int valorAtual;
     int i = 0;
@@ -54,7 +67,6 @@ int main(){
 
 
     printf("M:%d\nm:%d\nmaiorValor - menorValor = %d\nDesvio Padrao: %f",menorValor, maiorValor, maiorValor - menorValor, desvioPadrao(valores, 100));
-
 
     return 0;
 }
