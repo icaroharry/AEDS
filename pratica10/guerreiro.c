@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "guerreiro.h"
 
 id = 0;
@@ -7,6 +8,7 @@ id = 0;
 int rolaDados(){
     int somaDados=0;
     int i;
+    //srand(time(NULL)); // randomize seed
     for(i = 0; i< 3; i++)
         somaDados += rand() % 6 + 1;
     return somaDados;

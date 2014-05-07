@@ -25,5 +25,3 @@ int main(){
     printf("Vencedor: %d\n", vencedor);
     return 0;
 }
-
-

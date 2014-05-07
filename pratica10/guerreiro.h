@@ -1,4 +1,3 @@
-
 int id;
 
 typedef struct {
@@ -13,5 +12,3 @@ int rolaDados();
 void criaGuerreiro(guerreiro *g);
 
 void ataca(guerreiro *g, guerreiro *h);
-
-
