@@ -19,10 +19,9 @@ Repositório de práticas de AEDS
 
 >>> 1.1.5 - window.html
 
->> 1.2 - Métodos.html
+>> 1.2 - Métodos
 
->> 1.3 - Eventos.html
-
+>> 1.3 - Eventos
 
 > Bloco 1
 >> Bloco 2:
