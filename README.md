@@ -116,3 +116,29 @@ Repositório de práticas de AEDS
 >> 3.2 - Métodos
 
 >> 3.3 - Eventos
+>
+
+>=========================
+>1.Container
+>=========================
+>=========================
+>
+> Antes de qualquer coisa, é necessário adicionar um container ao projeto. Os containers são como "quadros",onde os widgets vão ser postos por cima.
+>>
+>#############
+>>###1.1.Templates.
+>>Os templates são os "modelos" dos containers.
+>>> #### 1.1.1.developerStudio.html
+>>
+>>> #### 1.1.2. tabbed.html
+>>
+>>> #### 1.1.3. tabbedContainer.html
+>>
+>>> #### 1.1.4. window.html
+
+>>###1.2.Métodos
+
+>>###1.3.Eventos
+
+
+
