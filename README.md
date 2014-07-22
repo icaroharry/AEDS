@@ -13,7 +13,7 @@ Repositório de práticas de AEDS
 >
 > 1 - Container
 >> 1.1 - Templates
->>> 1.1.2 - developerStudio
+>>> 1.1.2 - developerStudio.html
 
 >>> 1.1.3 - tabbed.html
 
