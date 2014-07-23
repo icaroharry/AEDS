@@ -223,7 +223,7 @@ Repositório de práticas de AEDS
 >>
 >
 ´´´ javascript
-{
+
                     "name": "botão", // nome
                     "label": "Botão", // label
                     "size": 10, // tamanho
@@ -239,7 +239,7 @@ Repositório de práticas de AEDS
                         }   
                     ],
                     "template": "field/button.html" // chama o template
-                    ´´´
+                    
 >>> #### 3.1.3.checkbox.html
 >>> #### 3.1.4.date.html
 >>> #### 3.1.5.hidden.html
