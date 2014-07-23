@@ -194,8 +194,10 @@ Repositório de práticas de AEDS
 >>Os templates são os "modelos" dos fields.
 >>> #### 3.1.1.big-button.html
 >> O bigbutton nada mais é do que um "button" extendido com uma label e um icone.Parâmetros básicos:"name","label","size","class","isVisible","events". Exemplo:
-
-´´´javascript
+>>
+>
+>
+´´´ javascript
 
                     "name": "send", // nome
                     "label": "teste big button", // label
@@ -206,14 +208,15 @@ Repositório de práticas de AEDS
                     "readOnly": false, // leitura & escrita
                     "events": [ // eventos
                         {
-                            "name": "FieldOnClick",
-                            "id": "876543",
+                            "name": "FieldOnClick", //nome do evento
+                            "id": "876543", // id evento
                             "code": "LoginController.bigButtonTest();"
+                            // código que representa o evento
                         }
                     ],
                     "template": "dyman/field/big-button.html"
-                    
                 
+
 ´´´
 >>> #### 3.1.2.button.html
 >>> #### 3.1.3.checkbox.html
@@ -245,3 +248,5 @@ Repositório de práticas de AEDS
 >>###3.2.Métodos
 
 >>###3.3.Eventos
+
+
