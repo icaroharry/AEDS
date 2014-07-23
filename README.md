@@ -193,7 +193,7 @@ Repositório de práticas de AEDS
 >>###3.1.Templates
 >>Os templates são os "modelos" dos fields.
 >>> #### 3.1.1.big-button.html
->> O bigbutton nada mais é do que um "button" extendido com uma label e um icone.Parâmetros básicos:"name","label","size","class","isVisible","events". Exemplo:
+>> O bigbutton nada mais é do que um "button" extendido com uma label e um icone.Parâmetros básicos:"name","label","size","class","isVisible","events", "template". Exemplo:
 >>
 >
 >
@@ -217,9 +217,9 @@ Repositório de práticas de AEDS
                     "template": "dyman/field/big-button.html" //chama o template
                 
 
-´´´
+
 >>> #### 3.1.2.button.html
->> O button nada mais é do que um botão.Parâmetros básicos:"name","label","size","class","isVisible","events".Exemplo:
+>> O button nada mais é do que um botão. Parâmetros básicos: "name", "label","size", "class", "isVisible", "events", "template". Exemplo:
 >>
 >
 ´´´ javascript
@@ -239,35 +239,74 @@ Repositório de práticas de AEDS
                         }   
                     ],
                     "template": "field/button.html" // chama o template
-                    
+
+
 >>> #### 3.1.3.checkbox.html
 >>> #### 3.1.4.date.html
 >>> #### 3.1.5.hidden.html
 >>> #### 3.1.6.image-static.html
->>> #### 3.1.7.label-with-icon.html
->>> #### 3.1.8.label.html
->>> #### 3.1.9.list.html
->>> #### 3.1.10.number-edit.html
->>> #### 3.1.11.number.html
->>> #### 3.1.12.list.html
->>> #### 3.1.13.observations-text.html
->>> #### 3.1.14.observations.html
->>> #### 3.1.15.password-edit.html
->>> #### 3.1.16.raw_text.html
->>> #### 3.1.17.select-edit.html
->>> #### 3.1.18.select-list.html
->>> #### 3.1.19.select-native.html
->>> #### 3.1.20.select-simple.html
->>> #### 3.1.21.select.html
->>> #### 3.1.22.span-field.html
->>> #### 3.1.23.switch.html
->>> #### 3.1.24.text-edit.html
->>> #### 3.1.25.waiter-categories.html
->>> #### 3.1.26.waiter-products.html
->>> #### 3.1.27.waiter-position.html
+Imagem estática. Parâmetros básicos: "name", "label", "source", "class", "isVisible", "template". Exemplo:
+>>
+>
+´´´ javascript
+
+                    "name": "image", // nome
+                    "label": "img", // label
+                    "source": "images/zeedhi-demo.svg", //caminho da imagem
+                    "class": "10 col-xs-offset-1", // class
+                    "isVisible": true, // is visible
+                    "template": "field/image-static.html" //chama o template
+    
+
+>>> #### 3.1.7.label-static
+Um label estático. Parâmetros básicos: "name", "label", "isVisible", "template", "class". Exemplo:
+>>
+>
+´´´ javascript
+
+                    "name": "static-label", // nome
+                    "label": "Label-Estático", // label
+                    "isVisible": true, // is visible
+                    "template": "field/label-static.html", // chama o template
+                    "class": 12 //class
+
+>>> #### 3.1.8.label-with-icon.html
+>>> #### 3.1.9.label.html
+Um label é um rótulo. Parâmetros básicos: "name", "label", "isVisible", "size", "class", "template". Exemplo:
+>>
+>
+´´´ javascript 
+
+                    "name":"label",
+                    "label":" Isso é um rótulo!",
+                    "isVisible": true,
+                    "size":20,
+                    "class":"10 col-xs-offset-1",
+                    "template":"field/label.html"
+
+
+>>> #### 3.1.10.list.html
+>>> #### 3.1.11.number-edit.html
+>>> #### 3.1.12.number.html
+>>> #### 3.1.13.list.html
+>>> #### 3.1.14.observations-text.html
+>>> #### 3.1.15.observations.html
+>>> #### 3.1.16.password-edit.html
+>>> #### 3.1.17.raw_text.html
+>>> #### 3.1.18.select-edit.html
+>>> #### 3.1.19.select-list.html
+>>> #### 3.1.20.select-native.html
+>>> #### 3.1.21.select-simple.html
+>>> #### 3.1.22.select.html
+>>> #### 3.1.23.span-field.html
+>>> #### 3.1.24.switch.html
+>>> #### 3.1.25.text.html
+>>> #### 3.1.26.text-edit.html
+>>> #### 3.1.27.textarea.html
+>>> #### 3.1.28.waiter-categories.html
+>>> #### 3.1.29.waiter-products.html
+>>> #### 3.1.30.waiter-position.html
 
 >>###3.2.Métodos
 
 >>###3.3.Eventos
-
-
