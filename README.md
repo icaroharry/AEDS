@@ -214,11 +214,32 @@ Repositório de práticas de AEDS
                             // código que representa o evento
                         }
                     ],
-                    "template": "dyman/field/big-button.html"
+                    "template": "dyman/field/big-button.html" //chama o template
                 
 
 ´´´
 >>> #### 3.1.2.button.html
+>> O button nada mais é do que um botão.Parâmetros básicos:"name","label","size","class","isVisible","events".Exemplo:
+>>
+>
+´´´ javascript
+{
+                    "name": "botão", // nome
+                    "label": "Botão", // label
+                    "size": 10, // tamanho
+                    "class": "10 col-xs-offset-1", //class
+                    "sameLine": false, // separador de linha
+                    "isVisible": true, //is visible
+                    "readOnly": false, //leitura & escrita
+                    "events": [ // eventos
+                        {
+                            "name": "FieldOnClick",
+                            "id": "876543",
+                            "code": "LoginController.login(args.owner.field.widget)" // código que representa o evento
+                        }   
+                    ],
+                    "template": "field/button.html" // chama o template
+                    ´´´
 >>> #### 3.1.3.checkbox.html
 >>> #### 3.1.4.date.html
 >>> #### 3.1.5.hidden.html
