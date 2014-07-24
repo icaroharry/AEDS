@@ -274,7 +274,7 @@ Um label estático. Parâmetros básicos: "name", "label", "isVisible", "templat
                     "isVisible": true, // is visible
                     "template": "field/label-static.html", // chama o template
                     "class": 12 //class
-                    ```
+```
 
 >>> #### 3.1.8.label-with-icon.html
 >>> #### 3.1.9.label.html
@@ -282,7 +282,7 @@ Um label é um rótulo. Parâmetros básicos: "name", "label", "isVisible", "siz
 >>
 >
 
-``` javascript 
+```javascript 
 
                     "name":"label", // nome
                     "label":" Isso é um rótulo!", // label
@@ -376,5 +376,3 @@ Um campo de texto editável. Parâmetros básicos: "name", "label", "class", "id
 >>###3.2.Métodos
 
 >>###3.3.Eventos
-
-
