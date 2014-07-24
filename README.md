@@ -198,7 +198,7 @@ Repositório de práticas de AEDS
 >
 >
 
-``` javascript
+```javascript
 
                     "name": "send", // nome
                     "label": "teste big button", // label
@@ -217,14 +217,15 @@ Repositório de práticas de AEDS
                     ],
                     "template": "dyman/field/big-button.html" //chama o template
              
-
-```   
+```
 
 
 >>> #### 3.1.2.button.html
 >> O button nada mais é do que um botão. Parâmetros básicos: "name", "label","size", "class", "isVisible", "events", "template". Exemplo:
 >>
 >
+
+```javascript
 
                     "name": "botão", // nome
                     "label": "Botão", // label
@@ -241,7 +242,7 @@ Repositório de práticas de AEDS
                         }   
                     ],
                     "template": "field/button.html" // chama o template
-
+```
 
 >>> #### 3.1.3.checkbox.html
 >>> #### 3.1.4.date.html
@@ -251,6 +252,7 @@ Imagem estática. Parâmetros básicos: "name", "label", "source", "class", "isV
 >>
 >
 
+```javascript
 
                     "name": "image", // nome
                     "label": "img", // label
@@ -258,18 +260,21 @@ Imagem estática. Parâmetros básicos: "name", "label", "source", "class", "isV
                     "class": "10 col-xs-offset-1", // class
                     "isVisible": true, // is visible
                     "template": "field/image-static.html" //chama o template
+```
 
 >>> #### 3.1.7.label-static
 Um label estático. Parâmetros básicos: "name", "label", "isVisible", "template", "class". Exemplo:
 >>
 >
 
+```javascript
 
                     "name": "static-label", // nome
                     "label": "Label-Estático", // label
                     "isVisible": true, // is visible
                     "template": "field/label-static.html", // chama o template
                     "class": 12 //class
+                    ```
 
 >>> #### 3.1.8.label-with-icon.html
 >>> #### 3.1.9.label.html
@@ -298,7 +303,8 @@ Um label é um rótulo. Parâmetros básicos: "name", "label", "isVisible", "siz
 um campo de texto editável que substitui na tela o que é digitado por algum caractere. Parâmetros básicos: "id", "name", "label", "isVisible", "isReadOnly", "class", "template". Exemplo:
 >>
 >
-``` javascript
+
+```javascript
                     "id": 000, //id campo
                     "name": "PASSWORD", // nome campo
                     "label": "Password", //label
@@ -325,6 +331,7 @@ Um campo de texto editável. Parâmetros básicos: "name", "label", "class", "id
 >>
 >
 
+```javascript
                     "id": 000, // id do campo
                     "name": "Texto", // nome
                     "label": "Texto", // label
@@ -334,11 +341,13 @@ Um campo de texto editável. Parâmetros básicos: "name", "label", "class", "id
                     "isVisible": true, // is visible
                     "template": "field/text-edit.html", // chama o template
                     "class": 12 // classe
-
+```
 
 >>O campo de texto ainda pode conter uma "máscara", um tipo de formatação personalizada. Exemplo de um campo de número de telefone:
 >>
 >
+
+```javascript
                     "id": 000,
                     "name": "PHONENUMBER",
                     "label": "Phone Number",
@@ -354,6 +363,7 @@ Um campo de texto editável. Parâmetros básicos: "name", "label", "class", "id
                             "format" : "(99) 9999-9999" // formato do telefone
                         }
                     }
+```
 
 
 >>> #### 3.1.27.textarea.html
