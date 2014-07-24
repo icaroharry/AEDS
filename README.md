@@ -197,7 +197,8 @@ Repositório de práticas de AEDS
 >>
 >
 >
-´´´ javascript
+
+``` javascript
 
                     "name": "send", // nome
                     "label": "teste big button", // label
@@ -215,14 +216,15 @@ Repositório de práticas de AEDS
                         }
                     ],
                     "template": "dyman/field/big-button.html" //chama o template
-                
+             
+
+```   
 
 
 >>> #### 3.1.2.button.html
 >> O button nada mais é do que um botão. Parâmetros básicos: "name", "label","size", "class", "isVisible", "events", "template". Exemplo:
 >>
 >
-´´´ javascript
 
                     "name": "botão", // nome
                     "label": "Botão", // label
@@ -248,7 +250,7 @@ Repositório de práticas de AEDS
 Imagem estática. Parâmetros básicos: "name", "label", "source", "class", "isVisible", "template". Exemplo:
 >>
 >
-´´´ javascript
+
 
                     "name": "image", // nome
                     "label": "img", // label
@@ -256,13 +258,12 @@ Imagem estática. Parâmetros básicos: "name", "label", "source", "class", "isV
                     "class": "10 col-xs-offset-1", // class
                     "isVisible": true, // is visible
                     "template": "field/image-static.html" //chama o template
-    
 
 >>> #### 3.1.7.label-static
 Um label estático. Parâmetros básicos: "name", "label", "isVisible", "template", "class". Exemplo:
 >>
 >
-´´´ javascript
+
 
                     "name": "static-label", // nome
                     "label": "Label-Estático", // label
@@ -275,14 +276,16 @@ Um label estático. Parâmetros básicos: "name", "label", "isVisible", "templat
 Um label é um rótulo. Parâmetros básicos: "name", "label", "isVisible", "size", "class", "template". Exemplo:
 >>
 >
-´´´ javascript 
 
-                    "name":"label",
-                    "label":" Isso é um rótulo!",
-                    "isVisible": true,
-                    "size":20,
-                    "class":"10 col-xs-offset-1",
-                    "template":"field/label.html"
+``` javascript 
+
+                    "name":"label", // nome
+                    "label":" Isso é um rótulo!", // label
+                    "isVisible": true, // is visible
+                    "size":20, // tamanho
+                    "class":"10 col-xs-offset-1", // class
+                    "template":"field/label.html" // chama o template
+```
 
 
 >>> #### 3.1.10.list.html
@@ -292,6 +295,22 @@ Um label é um rótulo. Parâmetros básicos: "name", "label", "isVisible", "siz
 >>> #### 3.1.14.observations-text.html
 >>> #### 3.1.15.observations.html
 >>> #### 3.1.16.password-edit.html
+um campo de texto editável que substitui na tela o que é digitado por algum caractere. Parâmetros básicos: "id", "name", "label", "isVisible", "isReadOnly", "class", "template". Exemplo:
+>>
+>
+``` javascript
+                    "id": 000, //id campo
+                    "name": "PASSWORD", // nome campo
+                    "label": "Password", //label
+                    "placeholder": null, // placeholder
+                    "isReadOnly": false, // leitura & escrita
+                    "isVisible": true, // is visible
+                    "template": "field/password-edit.html",
+                    // chama o template
+                    "class": 12 //class
+```
+
+
 >>> #### 3.1.17.raw_text.html
 >>> #### 3.1.18.select-edit.html
 >>> #### 3.1.19.select-list.html
@@ -302,7 +321,44 @@ Um label é um rótulo. Parâmetros básicos: "name", "label", "isVisible", "siz
 >>> #### 3.1.24.switch.html
 >>> #### 3.1.25.text.html
 >>> #### 3.1.26.text-edit.html
+Um campo de texto editável. Parâmetros básicos: "name", "label", "class", "id", "isReadOnly", "isVisible", "template". Exemplo:
+>>
+>
+
+                    "id": 000, // id do campo
+                    "name": "Texto", // nome
+                    "label": "Texto", // label
+                    "placeholder": Digite aqui, 
+                    // Placeholder.É o que aparece no espaço para editar.No caso, vai aparecer "Digite aqui" no espaço editável do campo
+                    "isReadOnly": false, // Leitura & escrita
+                    "isVisible": true, // is visible
+                    "template": "field/text-edit.html", // chama o template
+                    "class": 12 // classe
+
+
+>>O campo de texto ainda pode conter uma "máscara", um tipo de formatação personalizada. Exemplo de um campo de número de telefone:
+>>
+>
+                    "id": 000,
+                    "name": "PHONENUMBER",
+                    "label": "Phone Number",
+                    "placeholder": "Telefone",
+                    "isReadOnly": false,
+                    "isVisible": true,
+                    "template": "field/text-edit.html",
+                    "events": [],
+                    "class": 12,
+                    "mask": { // máscara de formatação
+                        "type": "",
+                        "params" : { //define como os parametros serão formatados no campo
+                            "format" : "(99) 9999-9999" // formato do telefone
+                        }
+                    }
+
+
 >>> #### 3.1.27.textarea.html
+
+
 >>> #### 3.1.28.waiter-categories.html
 >>> #### 3.1.29.waiter-products.html
 >>> #### 3.1.30.waiter-position.html
@@ -310,3 +366,5 @@ Um label é um rótulo. Parâmetros básicos: "name", "label", "isVisible", "siz
 >>###3.2.Métodos
 
 >>###3.3.Eventos
+
+
