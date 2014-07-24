@@ -155,8 +155,36 @@ Repositório de práticas de AEDS
 >>> #### 2.1.3.chart-morris.html
 >>> #### 2.1.4.container_row.html
 >>> #### 2.1.5.form_center_row.html
+>> Um widget mais centralizado, ideal para telas iniciais ou de login. Parâmetros básicos: "id", "name", "label", "isVisible","events", "template". Exemplo:
+>>
+>
+
+```javascript
+            "id": 1, //id
+            "name": "FormCenter", //nome
+            "label": "FormCenter", // label
+            "template": "widget/form-center-top.html", // chama o template
+            "isVisible": true, // is visible
+            "actions": [], // actions
+            "events": [], // eventos
+           
+```
 >>> #### 2.1.6.form-main.html
 >>> #### 2.1.7.form-view-edit.html
+>> Um widget ideal para formulários. Parâmetros básicos: "id, "name", "label", "template", "isVisible", "events". Exemplo:
+>>
+>
+
+```javascript
+            "id": 000, //id
+            "name": "Registro", //nome do widget, que é um form de registro
+            "label": "Dados de Endereço", //label
+            "template": "widget/form-view-edit.html", //chama o template
+            "isVisible": true, //is visible
+            "actions": [], // actions
+            "events": [], // eventos
+                
+```
 >>> #### 2.1.8.form-view.html
 >>> #### 2.1.9.form-without-scholler.html
 >>> #### 2.1.10.form.html
@@ -247,7 +275,27 @@ Repositório de práticas de AEDS
 >>> #### 3.1.3.checkbox.html
 >>> #### 3.1.4.date.html
 >>> #### 3.1.5.hidden.html
->>> #### 3.1.6.image-static.html
+>>> #### 3.1.6.imagem.html
+Imagem. Parâmetros básicos: "name", "label", "size", "isVisible", "class", "template". Exemplo:
+>>
+>
+
+```javascript
+                    "name": "image", // nome
+                    "label": "img", // label
+                    "size": 10, // tamanho
+                    "class": "10 col-xs-offset-1", // css
+                    "sameLine": true, // deixa na mesma linha
+                    "isVisible": true, // is visible
+                    "readOnly": false, // leitura e escrita
+                    "maxlength": 4, // tamanho máximo
+                    "template": "field/image.html", // template
+                    "mask": { // máscara 
+                        "type": "zerofill" // tipo de filtro
+                    }
+```
+
+>>> #### 3.1.7.image-static.html
 Imagem estática. Parâmetros básicos: "name", "label", "source", "class", "isVisible", "template". Exemplo:
 >>
 >
@@ -257,12 +305,12 @@ Imagem estática. Parâmetros básicos: "name", "label", "source", "class", "isV
                     "name": "image", // nome
                     "label": "img", // label
                     "source": "images/zeedhi-demo.svg", //caminho da imagem
-                    "class": "10 col-xs-offset-1", // class
+                    "class": "10 col-xs-offset-1", // css
                     "isVisible": true, // is visible
                     "template": "field/image-static.html" //chama o template
 ```
 
->>> #### 3.1.7.label-static
+>>> #### 3.1.8.label-static.html
 Um label estático. Parâmetros básicos: "name", "label", "isVisible", "template", "class". Exemplo:
 >>
 >
@@ -276,8 +324,8 @@ Um label estático. Parâmetros básicos: "name", "label", "isVisible", "templat
                     "class": 12 //class
 ```
 
->>> #### 3.1.8.label-with-icon.html
->>> #### 3.1.9.label.html
+>>> #### 3.1.9.label-with-icon.html
+>>> #### 3.1.10.label.html
 Um label é um rótulo. Parâmetros básicos: "name", "label", "isVisible", "size", "class", "template". Exemplo:
 >>
 >
@@ -293,10 +341,9 @@ Um label é um rótulo. Parâmetros básicos: "name", "label", "isVisible", "siz
 ```
 
 
->>> #### 3.1.10.list.html
->>> #### 3.1.11.number-edit.html
->>> #### 3.1.12.number.html
->>> #### 3.1.13.list.html
+>>> #### 3.1.11.list.html
+>>> #### 3.1.12.number-edit.html
+>>> #### 3.1.13.number.html
 >>> #### 3.1.14.observations-text.html
 >>> #### 3.1.15.observations.html
 >>> #### 3.1.16.password-edit.html
@@ -335,7 +382,7 @@ Um campo de texto editável. Parâmetros básicos: "name", "label", "class", "id
                     "id": 000, // id do campo
                     "name": "Texto", // nome
                     "label": "Texto", // label
-                    "placeholder": Digite aqui, 
+                    "placeholder": "Digite aqui", 
                     // Placeholder.É o que aparece no espaço para editar.No caso, vai aparecer "Digite aqui" no espaço editável do campo
                     "isReadOnly": false, // Leitura & escrita
                     "isVisible": true, // is visible
@@ -367,6 +414,18 @@ Um campo de texto editável. Parâmetros básicos: "name", "label", "class", "id
 
 
 >>> #### 3.1.27.textarea.html
+>> Caixa de texto. É uma caixa de comentário, por exemplo. Parâmetros básicos: "name", "label", "size", "isVisible", "class", "template". Exemplo:
+>>
+>
+
+```javascript
+                        "name": "comentário", // nome
+                        "label": "Deixe aqui seu comentário", //label
+                        "isVisible": true, // is visible
+                        "size": "25", // tamanho
+                        "class": "12", // class
+                        "template": "field/textarea.html" //template
+```
 
 
 >>> #### 3.1.28.waiter-categories.html
@@ -376,3 +435,11 @@ Um campo de texto editável. Parâmetros básicos: "name", "label", "class", "id
 >>###3.2.Métodos
 
 >>###3.3.Eventos
+Os eventos são ações que ocorrem quando há interação com os fields.
+>>> #### 3.3.1.FieldOnChange
+>>> #### 3.3.2.FieldOnCancel
+>>> #### 3.3.3.FieldOnClick
+>>> #### 3.3.4.FieldOnBlur
+>>> #### 3.3.5.FieldOnKeypress
+>>> #### 3.3.6.FieldAfterMoveRow
+>>> #### 3.3.7.FieldBeforeMoveRow
