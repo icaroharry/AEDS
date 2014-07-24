@@ -138,6 +138,14 @@ Repositório de práticas de AEDS
 >>###1.2.Métodos
 
 >>###1.3.Eventos
+Os eventos são ações que ocorrem quando há interação com o container.
+
+>>> #### 1.3.1.ContainerAfterClose
+>>> #### 1.3.2.ContainerOnBack
+>>> #### 1.3.3.ContainerBeforeClose
+>>> #### 1.3.4.ContainerAfterinit
+>>> #### 1.3.5.ContainerBeforeinit
+>>> #### 1.3.6.ContainerAfterOpenreport
 
 >
 
@@ -208,8 +216,17 @@ Repositório de práticas de AEDS
 >>###2.2.Métodos
 
 >>###2.3.Eventos
+Os eventos são ações que ocorrem quando há interação com o widget.
 
->
+>>> #### 2.3.1.WidgetAfterMoveRow
+>>> #### 2.3.2.WidgetBeforeMoveRow
+>>> #### 2.3.3.WidgetNewRow
+>>> #### 2.3.4.WidgetOnEnter
+>>> #### 2.3.5.WidgetOnEnterTab
+>>> #### 2.3.6.WidgetOnSync
+>>> #### 2.3.7.WidgetOnCancel
+>>> #### 2.3.8.WidgetOnSave
+>>> #### 2.3.9.WidgetOnInitDataSource
 
 >========================
 >3.Fields
@@ -273,9 +290,35 @@ Repositório de práticas de AEDS
 ```
 
 >>> #### 3.1.3.checkbox.html
+Uma checkbox é uma caixa de seleção. Parâmetros básicos: "name", "label",   "isVisible", "class", "template". Exemplo:
+>>
+>
+
+```javascript
+                      "name": "caixa de teste", // nome
+                      "label": "Clique nesse checkbox!", // label
+                      "isVisible": true, // is visible
+                      "class": "12", // css
+                      "template": "field/checkbox.html" // chama o template
+```
 >>> #### 3.1.4.date.html
+Um campo de data no formato dd/mm/yyyy. Parâmetros básicos: "name", "label", "isVisible", "class", "template". Exemplo:
+>>
+>
+
+```javascript
+                        "name": "Data",
+                        "label": "Data",
+                        "isVisible": true,
+                        "class":"12",
+                        "template": "field/date.html"
+```
+
 >>> #### 3.1.5.hidden.html
->>> #### 3.1.6.imagem.html
+
+
+
+>>> #### 3.1.6.image.html
 Imagem. Parâmetros básicos: "name", "label", "size", "isVisible", "class", "template". Exemplo:
 >>
 >
@@ -342,6 +385,8 @@ Um label é um rótulo. Parâmetros básicos: "name", "label", "isVisible", "siz
 
 
 >>> #### 3.1.11.list.html
+
+
 >>> #### 3.1.12.number-edit.html
 >>> #### 3.1.13.number.html
 >>> #### 3.1.14.observations-text.html
@@ -370,6 +415,19 @@ um campo de texto editável que substitui na tela o que é digitado por algum ca
 >>> #### 3.1.20.select-native.html
 >>> #### 3.1.21.select-simple.html
 >>> #### 3.1.22.select.html
+O select é um campo de pesquisa. Parâmetros básicos: "name", "label", "isVisible", "class", "template". Exemplo:
+>>
+>
+
+```javascript
+                    "name": "select", // nome
+                    "label": "Selecione", // label
+                    "isVisible": true, // is visible
+                    "class":"12", // css
+                    "template": "field/select.html", // chama o template
+                    "descriptionField": "Seleção" // Como um placeholder
+```
+
 >>> #### 3.1.23.span-field.html
 >>> #### 3.1.24.switch.html
 >>> #### 3.1.25.text.html
@@ -443,3 +501,6 @@ Os eventos são ações que ocorrem quando há interação com os fields.
 >>> #### 3.3.5.FieldOnKeypress
 >>> #### 3.3.6.FieldAfterMoveRow
 >>> #### 3.3.7.FieldBeforeMoveRow
+
+
+
