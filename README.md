@@ -541,12 +541,25 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
 >>###3.3.Events
 Events are actions that are performed when there is interaction with the fields.
 >>> #### 3.3.1.FieldOnChange
->>> #### 3.3.2.FieldOnCancel
->>> #### 3.3.3.FieldOnClick
->>> #### 3.3.4.FieldOnBlur
->>> #### 3.3.5.FieldOnKeypress
->>> #### 3.3.6.FieldAfterMoveRow
->>> #### 3.3.7.FieldBeforeMoveRow
+This event occurs when the original state of a field is modified. Basic parameters: "id", "method", "serviceName", "requestType". Example:
+    
 
+>>> #### 3.3.2.FieldOnCancel
+This event occurs when
+
+>>> #### 3.3.3.FieldOnClick
+This event occurs when the field is clicked.
+
+>>> #### 3.3.4.FieldOnBlur
+This event occurs when
+
+>>> #### 3.3.5.FieldOnKeypress
+This event occurs when
+
+>>> #### 3.3.6.FieldAfterMoveRow
+This event occurs when
+
+>>> #### 3.3.7.FieldBeforeMoveRow
+This event occurs when
 
 
