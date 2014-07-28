@@ -160,7 +160,9 @@ Repositório de práticas de AEDS
 
 >>> 3.1.31 - waiter-position.html
 
+
 >> 3.2 - Methods
+
 
 >> 3.3 - Events
 >
@@ -175,23 +177,128 @@ Repositório de práticas de AEDS
 >>###1.1.Templates
 >>The templates are the "models" of containers.
 >>> #### 1.1.1.developerStudio.html
+>> Basic parameters: "id", "name", "label", "template", "footer", "widgets[]", "events[]". Example:
 >>
+>
+
+```javascript
+    "id": 8016, // id
+    "name": "Developer", // name
+    "label": "developer", // label
+    "showFooter": true, // show footer
+    "showHeader": true, // show header
+    "footer": "component/footer.html", // footer
+    "events": [], // events
+    "template": "container/developerStudio.html" // template
+    "widgets": [] // widgets
+ ```
 >>> #### 1.1.2. tabbed.html
+>>Basic parameters: "id", "name", "label", "template", "footer", "widgets[]", "events[]". Example:
 >>
+>
+
+```javascript
+    "id": 8016, // id
+    "name": "Tabbed", // name
+    "label": "tabbed", // label
+    "showFooter": true, // show footer
+    "showHeader": true, // show header
+    "footer": "component/footer.html", // footer
+    "events": [], // events
+    "menus": [], // menus
+    "template": "container/tabbed.html" // template
+    "widgets": [] // widgets
+
+```
+
 >>> #### 1.1.3. tabbedContainer.html
+>>Basic parameters: "id", "name", "label", "template", "footer", "widgets[]", "events[]". Example:
 >>
+>
+
+```javascript
+    "id": 8016, // id
+    "name": "Tcont", // name
+    "label": tcont, // label
+    "showFooter": true, // show footer
+    "showHeader": true, // show header
+    "footer": "component/footer.html", // footer
+    "events": [], // events
+    "template": "container/tabbedContainer.html" // template
+    "widgets": [] // widgets
+
+```
+
 >>> #### 1.1.4. window.html
+>>Basic parameters: "id", "name", "label", "template", "footer", "widgets[]", "events[]". Example:
+>>
+>
+
+```javascript
+    "id": 8016, // id
+    "name": "Window", // name
+    "label": "developer", // label
+    "showFooter": true, // show footer
+    "showHeader": true, // show header
+    "footer": "component/footer.html", // footer
+    "events": [], // events
+    "template": "container/window.html" // template
+    "widgets": [] // widgets
+
+```
 
 >>###1.2.Methods
 
 >>###1.3.Events
  Events are actions that are performed when there is interaction with the container.
 >>> #### 1.3.1.ContainerAfterClose
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 1.3.2.ContainerOnBack
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 1.3.3.ContainerBeforeClose
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 1.3.4.ContainerAfterinit
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 1.3.5.ContainerBeforeinit
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 1.3.6.ContainerAfterOpenreport
+>>
+>>
+>
+
+```javascript
+
+```
 
 >
 
@@ -205,11 +312,39 @@ Repositório de práticas de AEDS
 >>###2.1.Templates
 >>The templates are the "models" of widgets.
 >>> #### 2.1.1.black-strip.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.2.chart-gauge.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.3.chart-morris.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.4.container_row.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.5.form_center_row.html
->> Um widget mais centralizado, ideal para telas iniciais ou de login. Basic parameters: "id", "name", "label", "isVisible","events", "template". Exemplo:
+>> Basic parameters: "id", "name", "label", "isVisible","events", "template". Exemplo:
 >>
 >
 
@@ -221,11 +356,12 @@ Repositório de práticas de AEDS
             "isVisible": true, // is visible
             "actions": [], // actions
             "events": [], // events
+            "fields": [], // fields
            
 ```
 >>> #### 2.1.6.form-main.html
 >>> #### 2.1.7.form-view-edit.html
->> Um widget ideal para formulários. Parâmetros básicos: "id, "name", "label", "template", "isVisible", "events". Exemplo:
+>> Basic parameters: "id, "name", "label", "template", "isVisible", "events". Exemplo:
 >>
 >
 
@@ -240,24 +376,157 @@ Repositório de práticas de AEDS
                 
 ```
 >>> #### 2.1.8.form-view.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.9.form-without-scholler.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.10.form.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.11.functions-template.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.12.list-grouped.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.13.list-popup.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.14.list.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.15.list_checkbox.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.16.list_mobile.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.17.production-message.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.18.sub-header.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.19.tab-widget-parent.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.20.tabbedWidget.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.21.table.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.22.waiter-group.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.23.waiter-list.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.24.waiter_orders.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.25.waiter_position.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.1.26.waiter_tables
+>>
+>>
+>
+
+```javascript
+
+```
 
 >>###2.2.Methods
 
@@ -265,14 +534,77 @@ Repositório de práticas de AEDS
 Events are actions that are performed when there is interaction with the widgets.
 
 >>> #### 2.3.1.WidgetAfterMoveRow
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.3.2.WidgetBeforeMoveRow
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.3.3.WidgetNewRow
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.3.4.WidgetOnEnter
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.3.5.WidgetOnEnterTab
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.3.6.WidgetOnSync
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.3.7.WidgetOnCancel
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.3.8.WidgetOnSave
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 2.3.9.WidgetOnInitDataSource
+>>
+>>
+>
+
+```javascript
+
+```
 
 >========================
 >3.Fields
@@ -286,7 +618,6 @@ Events are actions that are performed when there is interaction with the widgets
 >>> #### 3.1.1.big-button.html
 >> The bigbutton is a extended "button". Basic parameters:"name","label","size","class","isVisible","events", "template". Example:
 >>
->
 >
 
 ```javascript
@@ -306,13 +637,13 @@ Events are actions that are performed when there is interaction with the widgets
                             // code that representing the event
                         }
                     ],
-                    "template": "dyman/field/big-button.html" //chama o template
+                    "template": "dyman/field/big-button.html" // template
              
 ```
 
 
 >>> #### 3.1.2.button.html
->>A button. Basic parameters: "name", "label","size", "class", "isVisible", "events", "template". Exemplo:
+>>A button. Basic parameters: "name", "label","size", "class", "isVisible", "events", "template". Example:
 >>
 >
 
@@ -336,7 +667,7 @@ Events are actions that are performed when there is interaction with the widgets
 ```
 
 >>> #### 3.1.3.checkbox.html
-A checkbox. Basic parameters: "name", "label",   "isVisible", "class", "template". Exemplo:
+A checkbox. Basic parameters: "name", "label",   "isVisible", "class", "template". Example
 >>
 >
 
@@ -348,7 +679,7 @@ A checkbox. Basic parameters: "name", "label",   "isVisible", "class", "template
                       "template": "field/checkbox.html" // template
 ```
 >>> #### 3.1.4.date.html
-A date field. Basic parameters: "name", "label", "isVisible", "class", "template". Exemplo:
+A date field. Basic parameters: "name", "label", "isVisible", "class", "template". Example:
 >>
 >
 
@@ -361,8 +692,13 @@ A date field. Basic parameters: "name", "label", "isVisible", "class", "template
 ```
 
 >>> #### 3.1.5.hidden.html
+>>
+>>
+>
 
+```javascript
 
+```
 
 >>> #### 3.1.6.image.html
 An image. Basic parameters: "name", "label", "size", "isVisible", "class", "template". Example:
@@ -407,13 +743,20 @@ A static label. Basic parameters: "name", "label", "isVisible", "template", "cla
 ```javascript
 
                     "name": "static-label", // name
-                    "label": "Label-Estático", // label
+                    "label": "Static-Label", // label
                     "isVisible": true, // is visible
                     "template": "field/label-static.html", // template
                     "class": 12 //css
 ```
 
 >>> #### 3.1.9.label-with-icon.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.10.label.html
 A label field. Basic parameters: "name", "label", "isVisible", "size", "class", "template". Example:
 >>
@@ -431,13 +774,54 @@ A label field. Basic parameters: "name", "label", "isVisible", "size", "class", 
 
 
 >>> #### 3.1.11.list.html
+>>
+>>
+>
 
+```javascript
+
+```
 
 >>> #### 3.1.12.number-edit.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.13.number.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.14.observations-text.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.15.observations.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.16.password-edit.html
+>>
+>>
+>
+
+```javascript
+
+```
 An editable text field that changes in the screen what is typed for any character. Basic parameters: "id", "name", "label", "isVisible", "isReadOnly", "class", "template". Example:
 >>
 >
@@ -455,11 +839,53 @@ An editable text field that changes in the screen what is typed for any characte
 ```
 
 >>> #### 3.1.17.password.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.18.raw_text.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.19.select-edit.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.20.select-list.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.21.select-native.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.22.select-simple.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.23.select.html
 The select is a search field. Basic parameters: "name", "label", "isVisible", "class", "template". Exemple:
 >>
@@ -475,8 +901,29 @@ The select is a search field. Basic parameters: "name", "label", "isVisible", "c
 ```
 
 >>> #### 3.1.24.span-field.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.25.switch.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.26.text.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.27.text-edit.html
 An editable text field. Basic parameters: "name", "label", "class", "id", "isReadOnly", "isVisible", "template". Example:
 >>
@@ -533,33 +980,176 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
 
 
 >>> #### 3.1.29.waiter-categories.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.30.waiter-products.html
+>>
+>>
+>
+
+```javascript
+
+```
 >>> #### 3.1.31.waiter-position.html
+>>
+>>
+>
+
+```javascript
+
+```
 
 >>###3.2.Methods
 
 >>###3.3.Events
 Events are actions that are performed when there is interaction with the fields.
 >>> #### 3.3.1.FieldOnChange
-This event occurs when the original state of a field is modified. Basic parameters: "id", "method", "serviceName", "requestType". Example:
+This event occurs when the original state of a field is modified. Basic parameters: "id", "method", "serviceName. Example:
+>>
+>
+
+```javascript
+                    "name": "datasource_id",
+                    "label": "Choose a datasource",
+                    "size": 120,
+                    "class": 12,
+                    "sameLine": true,
+                    "isVisible": true,
+                    "readOnly": false,
+                    "template": "field/list.html",
+                    "events": [
+                        {
+                            "id": 1,
+                            "name": "FieldOnChange",
+                            "code": "developerStudioMethods.loadMetaColumns(args);" // code can only call methods that are in registered controlers in the application context
+                        }
+                    ],
+                    "placeholder": "",
+                    "minimumInputLength": 1,
+                    "isMultiple": false,
+                    "maximumSelectionSize": 2,
+                    "descriptionField": "NAME",
+                    "valueField": "DATASOURCE_ID",
+                    "dataSource": {
+                        "localStorage": true,
+                        "name": "/dataSourceReference",
+                        "data": [
+                            
+                        ]
+                    }
+
+```
     
 
 >>> #### 3.3.2.FieldOnCancel
-This event occurs when
+This event occurs when the value of field is canceled.Basic parameters: "id", "method", "serviceName. Example:
+>>
+>
+
+```javascript
+
+```
 
 >>> #### 3.3.3.FieldOnClick
-This event occurs when the field is clicked.
+This event occurs when the field is clicked. Basic parameters: "id", "method", "serviceName". Example:
+>>
+>
+
+```javascript
+                    // this is a "alert" button
+                    "name": "Alert", // name
+                    "label": "Alert", // label
+                    "size": 40, // size
+                    "class": 3, 
+                    "sameLine": true, 
+                    "isVisible": true, 
+                    "readOnly": false,
+                    "template": "field/button.html", // template
+                    "events": [ // events
+                        {
+                            "id": 8, // id
+                            "name": "FieldOnClick", // serviceName 
+                             "code": "alert(' Test ');"  // method
+                            // code can only call methods that are in registered controlers in the application context
+                        }
+                    ]
+```
 
 >>> #### 3.3.4.FieldOnBlur
-This event occurs when
+This event occurs when focus is last. Basic parameters: "id", "method", "serviceName". Example:
+>>
+>
+
+```javascript
+
+```
 
 >>> #### 3.3.5.FieldOnKeypress
-This event occurs when
+This event occurs when something is entered in the field. Basic parameters: "id", "method", "serviceName". Example:
+>>
+>
+
+```javascript
+                        "id" : 234,
+                        "name": "Test", 
+                        "placeholder": " type something here to enable the   event ", 
+                        "size": 80, 
+                        "class": 3, 
+                        "sameLine": true, 
+                        "isVisible": true, 
+                        "readOnly": false,
+                        "template": "field/text.html", 
+                        "events": [ 
+                            {
+                                "id": 8, 
+                                "name": "FieldOnKeypress", // event name
+                                "code": "alert(' Test ');" // method
+                                // code can only call methods that are in registered controlers  in the application context
+                            }
+                        ]
+
+```
 
 >>> #### 3.3.6.FieldAfterMoveRow
-This event occurs when
+This event occurs when the widget where the field is changing. This event gets the field in the widget after some change. Basic parameters: "id", "method", "serviceName". Example:
+>>
+>
+
+```javascript
+                   "colorProperty": "color",
+                    "events": [
+                        {
+                            "name": "FieldAfterMoveRow",
+                            "code": "ScreenService.filterWidget(args.owner,  args.owner.parent.widgets)"
+                        }
+                    ],
+                    "labelProperty": "label",
+                    "fields": [],
+                    "name": "categories",
+                    "class": "",
+                    "lines" : 3,
+                    "readOnly": false,
+                    "template": "field/waiter-categories.html",
+                    "valueField": "category",
+                    "dataSource": {
+                        "name": "categories",
+                        "localStorage": true
+                    }
+
+```
 
 >>> #### 3.3.7.FieldBeforeMoveRow
-This event occurs when
+Basic parameters: "id", "method", "serviceName". Example:
+>>
+>
+
+```javascript
+
+```
 
 
