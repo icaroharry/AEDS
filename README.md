@@ -188,9 +188,9 @@ Repositório de práticas de AEDS
     "showFooter": true, // show footer
     "showHeader": true, // show header
     "footer": "component/footer.html", // footer
-    "events": [], // events
+    "events": [{}], // events
     "template": "container/developerStudio.html" // template
-    "widgets": [] // widgets
+    "widgets": [{}] // widgets
  ```
 >>> #### 1.1.2. tabbed.html
 >>Basic parameters: "id", "name", "label", "template", "footer", "widgets[]", "events[]". Example:
@@ -223,9 +223,9 @@ Repositório de práticas de AEDS
     "showFooter": true, // show footer
     "showHeader": true, // show header
     "footer": "component/footer.html", // footer
-    "events": [], // events
+    "events": [{}], // events
     "template": "container/tabbedContainer.html" // template
-    "widgets": [] // widgets
+    "widgets": [{}] // widgets
 
 ```
 
@@ -241,9 +241,9 @@ Repositório de práticas de AEDS
     "showFooter": true, // show footer
     "showHeader": true, // show header
     "footer": "component/footer.html", // footer
-    "events": [], // events
+    "events": [{}], // events
     "template": "container/window.html" // template
-    "widgets": [] // widgets
+    "widgets": [{}] // widgets
 
 ```
 
@@ -317,18 +317,18 @@ Repositório de práticas de AEDS
 >
 
 ```javascript
-             "id": 1, // id
+            "id": 1, // id
             "name": "Black", // name
             "label": "black", // label
             "template": "widget/black-strip.html", // template
             "isVisible": true, // is visible
-            "actions": [], // actions
-            "events": [], // events
-            "fields": [], // fields
+            "actions": [{}], // actions
+            "events": [{}], // events
+            "fields": [{}], // fields
 
 ```
 >>> #### 2.1.2.chart-gauge.html
->>
+>> Graphical widget. Basic parameters: "id", "name", "label", "isVisible", "events", "template", "fields". Example: 
 >>
 >
 
@@ -336,7 +336,7 @@ Repositório de práticas de AEDS
 
 ```
 >>> #### 2.1.3.chart-morris.html
->>
+>> Basic parameters: "id", "name", "label", "isVisible", "events", "template", "fields". Example: 
 >>
 >
 
@@ -344,15 +344,25 @@ Repositório de práticas de AEDS
 
 ```
 >>> #### 2.1.4.container_row.html
->>
+>> The container-row widget is like a "hide" menu. When their icon is clicked, the actions and fields "inside" the container-row appears, revealing a type of menu. Basic parameters: "id", "name", "label", "isVisible", "events", "template", "fields". Example: 
 >>
 >
 
 ```javascript
+            "id": 1, // id
+            "name": "container_widget", // name
+            "label": "App Creation", // label
+            "height": "100%", // height
+            "width": "9", // width
+            "isVisible": true, // is visible 
+            "template": "widget/container_row.html", // template
+            "events": [{}], // Place the events here
+            "actions": [{}] // Place the actions here. The icon actions, for example.
+            "fields": [{}], // fields
 
 ```
 >>> #### 2.1.5.form_center_row.html
->> Basic parameters: "id", "name", "label", "isVisible","events", "template", "fields". Exemplo:
+>> The form_center_row is like a painel. Basic parameters: "id", "name", "label", "isVisible","events", "template", "fields". Example:
 >>
 >
 
@@ -362,14 +372,29 @@ Repositório de práticas de AEDS
             "label": "FormCenter", // label
             "template": "widget/form-center-top.html", // template
             "isVisible": true, // is visible
-            "actions": [], // actions
-            "events": [], // events
-            "fields": [], // fields
+            "actions": [{}], // actions
+            "events": [{}], // events
+            "fields": [{}], // fields
            
 ```
 >>> #### 2.1.6.form-main.html
+>> The form-main is a widget with three forms of personal data: personal data, adress and relationship. Basic parameters: "id, "name", "label", "template", "isVisible", "events", "fields". Example:
+>>
+>
+
+```javascript
+            "id": 1, // id
+            "name": Main, // name
+            "label": "Main", // label
+            "template": "form-main.html", // template
+            "isVisible": true, // is visible
+            "actions": [{}], // actions
+            "events": [{}], // events
+            "fields": [{}], // fields
+```
+
 >>> #### 2.1.7.form-view-edit.html
->> Basic parameters: "id, "name", "label", "template", "isVisible", "events", "fields". Exemplo:
+>> A widget for edition. Basic parameters: "id, "name", "label", "template", "isVisible", "events", "fields". Example:
 >>
 >
 
@@ -379,9 +404,9 @@ Repositório de práticas de AEDS
             "label": "Dados de Endereço", // label
             "template": "widget/form-view-edit.html", // template
             "isVisible": true, // is visible
-            "actions": [], // actions
-            "events": [], // eventos
-            "fields": [], // fields
+            "actions": [{}], // actions
+            "events": [{}], // eventos
+            "fields": [{}], // fields
                 
 ```
 >>> #### 2.1.8.form-view.html
@@ -962,7 +987,7 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
                     "isReadOnly": false, // read and writing
                     "isVisible": true, // is visible
                     "template": "field/text-edit.html", //template
-                    "events": [], // events - in that case don´t have
+                    "events": [{}], // events - in that case don´t have
                     "class": 12, // css
                     "mask": { // mask
                         "type": "",
@@ -1138,7 +1163,7 @@ This event occurs when the widget where the field is changing. This event gets t
                         }
                     ],
                     "labelProperty": "label",
-                    "fields": [],
+                    "fields": [{}],
                     "name": "categories",
                     "class": "",
                     "lines" : 3,
