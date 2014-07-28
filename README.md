@@ -312,11 +312,19 @@ Repositório de práticas de AEDS
 >>###2.1.Templates
 >>The templates are the "models" of widgets.
 >>> #### 2.1.1.black-strip.html
->>
+>> The black-strip is a special widget. Fields in these widgets don´t appears, but their labels are turned into a white text in the screen. The result is similar a white text in a dark screen. Basic parameters: "id", "name", "label", "isVisible", "events", "template", "fields". Example: 
 >>
 >
 
 ```javascript
+             "id": 1, // id
+            "name": "Black", // name
+            "label": "black", // label
+            "template": "widget/black-strip.html", // template
+            "isVisible": true, // is visible
+            "actions": [], // actions
+            "events": [], // events
+            "fields": [], // fields
 
 ```
 >>> #### 2.1.2.chart-gauge.html
@@ -344,7 +352,7 @@ Repositório de práticas de AEDS
 
 ```
 >>> #### 2.1.5.form_center_row.html
->> Basic parameters: "id", "name", "label", "isVisible","events", "template". Exemplo:
+>> Basic parameters: "id", "name", "label", "isVisible","events", "template", "fields". Exemplo:
 >>
 >
 
@@ -361,7 +369,7 @@ Repositório de práticas de AEDS
 ```
 >>> #### 2.1.6.form-main.html
 >>> #### 2.1.7.form-view-edit.html
->> Basic parameters: "id, "name", "label", "template", "isVisible", "events". Exemplo:
+>> Basic parameters: "id, "name", "label", "template", "isVisible", "events", "fields". Exemplo:
 >>
 >
 
@@ -373,6 +381,7 @@ Repositório de práticas de AEDS
             "isVisible": true, // is visible
             "actions": [], // actions
             "events": [], // eventos
+            "fields": [], // fields
                 
 ```
 >>> #### 2.1.8.form-view.html
