@@ -1,10 +1,3 @@
-AEDS
-====
-
-Repositório de práticas de AEDS
-
- --- Temporário - Documentação ---
-
 ##Documentation
 ==================
 >
@@ -198,6 +191,7 @@ Repositório de práticas de AEDS
 >
 
 ```javascript
+
     "id": 8016, // id
     "name": "Tabbed", // name
     "label": "tabbed", // label
@@ -252,7 +246,7 @@ Repositório de práticas de AEDS
 >>###1.3.Events
  Events are actions that are performed when there is interaction with the container.
 >>> #### 1.3.1.ContainerAfterClose
->>
+>> This event occurs after close the container. Basic paramteres: "id", "method", "serviceName". Example:
 >>
 >
 
@@ -410,30 +404,51 @@ Repositório de práticas de AEDS
                 
 ```
 >>> #### 2.1.8.form-view.html
->>
+>> The form-view widget show only the labels of fields in a white screen. Despite this, the buttons works normally, same without form. Basic parameters: "id, "name", "label", "template", "isVisible", "events", "fields". Example:
 >>
 >
 
 ```javascript
-
+            "id": 000, // id
+            "name": "Form", // name 
+            "label": "form", // label
+            "template": "widget/form-view.html", // template
+            "isVisible": true, // is visible
+            "actions": [{}], // actions
+            "events": [{}], // eventos
+            "fields": [{}], // fields
 ```
 >>> #### 2.1.9.form-without-scholler.html
->>
+>> Basic parameters: "id, "name", "label", "template", "isVisible", "events", "fields". Example:
 >>
 >
 
 ```javascript
-
+            "id": 000, // id
+            "name": "Form", // name 
+            "label": "form", // label
+            "template": "widget/form-without-scholler.html", // template
+            "isVisible": true, // is visible
+            "actions": [{}], // actions
+            "events": [{}], // eventos
+            "fields": [{}], // fields
 ```
 >>> #### 2.1.10.form.html
->>
+>> Basic parameters: "id, "name", "label", "template", "isVisible", "events", "fields". Example:
 >>
 >
 
 ```javascript
-
+            "id": 000, // id
+            "name": "Form", // name 
+            "label": "form", // label
+            "template": "widget/form.html", // template
+            "isVisible": true, // is visible
+            "actions": [{}], // actions
+            "events": [{}], // eventos
+            "fields": [{}], // fields
 ```
->>> #### 2.1.11.functions-template.html
+>>> #### 2.1.11.funtions-template.html
 >>
 >>
 >
@@ -450,7 +465,7 @@ Repositório de práticas de AEDS
 
 ```
 >>> #### 2.1.13.list-popup.html
->>
+>> This template is a search field.
 >>
 >
 
@@ -458,7 +473,7 @@ Repositório de práticas de AEDS
 
 ```
 >>> #### 2.1.14.list.html
->>
+>> This template is a search field.
 >>
 >
 
@@ -466,7 +481,7 @@ Repositório de práticas de AEDS
 
 ```
 >>> #### 2.1.15.list_checkbox.html
->>
+>> This template is a checkbox.
 >>
 >
 
@@ -474,7 +489,7 @@ Repositório de práticas de AEDS
 
 ```
 >>> #### 2.1.16.list_mobile.html
->>
+>> This template is a search field.
 >>
 >
 
@@ -482,7 +497,7 @@ Repositório de práticas de AEDS
 
 ```
 >>> #### 2.1.17.production-message.html
->>
+>> 
 >>
 >
 
@@ -498,7 +513,7 @@ Repositório de práticas de AEDS
 
 ```
 >>> #### 2.1.19.tab-widget-parent.html
->>
+>> This template shows only the directories.
 >>
 >
 
@@ -506,12 +521,19 @@ Repositório de práticas de AEDS
 
 ```
 >>> #### 2.1.20.tabbedWidget.html
->>
+>> This template add a directory panel in the footer of widget. Basic parameters: "id, "name", "label", "template", "isVisible", "events", "fields". Example:
 >>
 >
 
 ```javascript
-
+            "id": 000, // id
+            "name": "Tab", // name 
+            "label": "tab", // label
+            "template": "widget/tabbedWidget.html", // template
+            "isVisible": true, // is visible
+            "actions": [{}], // actions
+            "events": [{}], // eventos
+            "fields": [{}], // fields
 ```
 >>> #### 2.1.21.table.html
 >>
@@ -568,15 +590,31 @@ Repositório de práticas de AEDS
 Events are actions that are performed when there is interaction with the widgets.
 
 >>> #### 2.3.1.WidgetAfterMoveRow
->>
+>> This event occurs after the current row to be modified.Basic parameters: "id", "method", "serviceName". Example:
 >>
 >
 
 ```javascript
-
+            "id": 0,
+            "name": "fields_widget",
+            "label": "Inner Widget",
+            "height": "100%",
+            "width": 9,
+            "isVisible": true,
+            "template": "widget/field_row.html", // template
+            "events": [// events
+                {
+                    "id": 99,
+                    "name": "WidgetAfterMoveRow",// sericeName
+                    "code": "developerStudioMethods.listDataColumns(args);"
+                    // code
+                }
+            ],
+            "fields":[{}],
+            "widgets"[{}]
 ```
 >>> #### 2.3.2.WidgetBeforeMoveRow
->>
+>> This event occurs before the current row to be modified.Basic parameters: "id", "method", "serviceName". Example:
 >>
 >
 
@@ -584,31 +622,72 @@ Events are actions that are performed when there is interaction with the widgets
 
 ```
 >>> #### 2.3.3.WidgetNewRow
->>
+>> This event occurs when a new row is created by the method widget.newRow. Basic parameters: "id", "method", "serviceName". Example:
 >>
 >
 
 ```javascript
-
+            "id": 0,
+            "name": "Test",
+            "label": "test",
+            "template": "widget/form.html", //template
+            "isVisible": true,
+            "actions": [{}], // actions
+            "events": [ // events
+                {
+                    "id": 0, // id
+                    "name": "WidgetNewRow", // service name
+                    "code": "widget.newRow()" // code
+                }
+            ],
+            "fields": [{}] // fields
 ```
 >>> #### 2.3.4.WidgetOnEnter
->>
+>> This event occurs when the widget enters. Basic parameters: "id", "method", "serviceName". Example:
 >>
 >
 
 ```javascript
+            "id": 0,
+            "name": "Test",
+            "label": "test",
+            "template": "widget/form.html", //template
+            "isVisible": true,
+            "actions": [{}], // actions
+            "events": [ // events
+                {
+                    "id": 0, // id
+                    "name": "WidgetOnEnter", // service name
+                    "code": "args.owner.newRow()" // code
+                }
+            ],
+            "fields": [{}] // fields
 
 ```
 >>> #### 2.3.5.WidgetOnEnterTab
->>
+>> Used with tabbedWidget, this event occurs when the tab is selected. Basic parameters: "id", "method", "serviceName". Example:
 >>
 >
 
 ```javascript
+            "id": 0,
+            "name": "Test",
+            "label": "test",
+            "template": "widget/tabbedWidget.html", //template
+            "isVisible": true,
+            "actions": [{}], // actions
+            "events": [ // events
+                {
+                    "id": 0, // id
+                    "name": "WidgetOnEnterTab", // service name
+                    "code": "args.owner.newRow()" // code
+                }
+            ],
+            "fields": [{}] // fields
 
 ```
 >>> #### 2.3.6.WidgetOnSync
->>
+>> Basic parameters: "id", "method", "serviceName". Example:
 >>
 >
 
@@ -616,28 +695,72 @@ Events are actions that are performed when there is interaction with the widgets
 
 ```
 >>> #### 2.3.7.WidgetOnCancel
->>
+>> Basic parameters: "id", "method", "serviceName". Example:
 >>
 >
 
 ```javascript
-
+            "id": 0,
+            "name": "Test",
+            "label": "test",
+            "template": "widget/form-view.html", //template
+            "isVisible": true,
+            "actions": [{}], // actions
+            "events": [ // events
+                {
+                    "id": 0, // id
+                    "name": "WidgetOnCancel", // service name
+                    "expression" :"ScreenService.cancelChange(templateManager.container.widgets[0])" // code
+                }
+            ],
+            "fields": [{}] // fields
 ```
 >>> #### 2.3.8.WidgetOnSave
->>
+>> This event occurs when the saverow is called. Basic parameters: "id", "method", "serviceName". Example:
 >>
 >
 
 ```javascript
+            "id": 0,
+            "name": "Test",
+            "label": "test",
+            "template": "widget/form-view.html", //template
+            "isVisible": true,
+            "actions": [{}], // actions
+            "events": [ // events
+                {
+                    "id": 0, // id
+                    "name": "WidgetOnSave", // service name
+                    "expression" :"ScreenService.saveChange(templateManager.container.widgets[0])" // code
+                }
+            ],
+            "fields": [{}] // fields
 
 ```
 >>> #### 2.3.9.WidgetOnInitDataSource
->>
+>> This event occurs after the datasource is initializing. Basic parameters: "id", "method", "serviceName". Example:
 >>
 >
 
 ```javascript
-
+            "id": 0,
+            "name": "Test",
+            "label": "test",
+            "template": "widget/form-center-top.html", //template
+            "isVisible": true,
+            "actions": [{}], // actions
+            "events": [ // events
+                {
+                    "name": "WidgetOnInitDataSource", // serviceName
+                    "code": "TestController.onEnter(args.owner);args.owner.newRow();args.owner.moveToFirst()", // code
+                    "id": 7
+                }
+            ],
+            "dataSource" : { // datasource 
+                "name" : "/test",
+                "localStorage" : true
+            },
+            "fields": [{}] // fields
 ```
 
 >========================
@@ -849,14 +972,7 @@ A label field. Basic parameters: "name", "label", "isVisible", "size", "class", 
 
 ```
 >>> #### 3.1.16.password-edit.html
->>
->>
->
-
-```javascript
-
-```
-An editable text field that changes in the screen what is typed for any character. Basic parameters: "id", "name", "label", "isVisible", "isReadOnly", "class", "template". Example:
+>> An editable text field that changes in the screen what is typed for any character. Basic parameters: "id", "name", "label", "isVisible", "isReadOnly", "class", "template". Example:
 >>
 >
 
@@ -1043,7 +1159,7 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
 >>###3.3.Events
 Events are actions that are performed when there is interaction with the fields.
 >>> #### 3.3.1.FieldOnChange
-This event occurs when the original state of a field is modified. Basic parameters: "id", "method", "serviceName. Example:
+This event occurs when the original state of a field is modified. Also serves to detect when an option is selected from the select. Basic parameters: "id", "method", "serviceName. Example:
 >>
 >
 
@@ -1081,11 +1197,47 @@ This event occurs when the original state of a field is modified. Basic paramete
     
 
 >>> #### 3.3.2.FieldOnCancel
-This event occurs when the value of field is canceled.Basic parameters: "id", "method", "serviceName. Example:
+This event occurs when the select field is canceled.Basic parameters: "id", "method", "serviceName. Example:
 >>
 >
 
 ```javascript
+// in this example, a datasource is used by the select
+                "name": "genre",
+                "label": "Sexo",
+                "size": 10,
+                "dataSource" : { // datasource
+                    "data" : [{ // data
+                        "name" : "Rodrigo Cesar dsfnajk",
+                        "birth" : "12*12/12",
+                        "genre" : "Masculino",
+                        "last" : "Paul  dsaffdsao",
+                        "hu" : "fadfdas"
+                    },{
+                        "name" : "Rodrigo Cesar",
+                        "birth" : "12*12/12",
+                        "genre" : "Masculino",
+                        "last" : "Paul  dsaffdsao",
+                        "hu" : "fadfdas"
+                    },{
+                        "name" : "Rodrigo dsfnajk",
+                        "birth" : "12*12/12",
+                        "genre" : "Masculino",
+                        "last" : "Paul ",
+                        "hu" : "fadfdas"
+                    }]
+                },
+                "events" : [{ // events
+                    "id": 0,
+                    "name": "FieldOnCancel", // service name
+                    "expression" : "ScreenService.closeFieldView()"
+                }], // code 
+                "class": "6",
+                "sameLine": false,
+                "isVisible": true,
+                "readOnly": false,
+                "template": "field/select.html",
+                "maxlength": 12,
 
 ```
 
@@ -1150,16 +1302,16 @@ This event occurs when something is entered in the field. Basic parameters: "id"
 ```
 
 >>> #### 3.3.6.FieldAfterMoveRow
-This event occurs when the widget where the field is changing. This event gets the field in the widget after some change. Basic parameters: "id", "method", "serviceName". Example:
+This event occurs after the current row to be modified. Basic parameters: "id", "method", "serviceName". Example:
 >>
 >
 
 ```javascript
-                   "colorProperty": "color",
+                   
                     "events": [
                         {
                             "name": "FieldAfterMoveRow",
-                            "code": "ScreenService.filterWidget(args.owner,  args.owner.parent.widgets)"
+                            "code": "ScreenService.filterWidget(args.owner,  args.owner.parent.widgets)" // code
                         }
                     ],
                     "labelProperty": "label",
@@ -1178,7 +1330,7 @@ This event occurs when the widget where the field is changing. This event gets t
 ```
 
 >>> #### 3.3.7.FieldBeforeMoveRow
-Basic parameters: "id", "method", "serviceName". Example:
+This event occurs before the current row to be modified. Basic parameters: "id", "method", "serviceName". Example:
 >>
 >
 
