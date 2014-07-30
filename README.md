@@ -153,12 +153,68 @@
 
 >>> 3.1.31 - waiter-position.html
 
-
 >> 3.2 - Methods
 
-
 >> 3.3 - Events
->
+
+> 4 - Components
+>> 4.1 - actionsForm.html
+
+>> 4.2 - actionsGrid.html
+
+>> 4.3 - alert.html
+
+>> 4.4 - footer-edit.html
+
+>> 4.5 - footer-field-edit.html
+
+>> 4.6 - footer-field.html
+
+>> 4.7 - footer-input.html
+
+>> 4.8 - footer-list-form.html
+
+>> 4.9 - footer.html
+
+>> 4.10 - head.html
+
+>> 4.11 - header.html
+
+>> 4.12 - menu.html
+
+>> 4.13 - messages.html
+
+>> 4.14 - popup.html
+
+>> 4.15 - tabs.html
+
+
+> 5 - Wizard
+>> 5.1 - Geral
+
+>> 5.2 - Methods
+>>> 5.2.1 - RegisterWizardController.onNextStage(args)
+
+>>> 5.2.2 - RegisterWizardController.onFinish() 
+
+
+>> 5.3 - Events
+
+
+>>> 5.3.1 - WizardOnDecision
+
+>>> 5.3.2 - WizardAfterOpenStage
+
+>>> 5.3.3 - WizardBeforePreviousStage
+
+>>> 5.3.4 - WizardAfterNextStage
+
+>>> 5.3.5 - WizardAfterPreviousStage
+
+>>> 5.3.6 - WizardBeforeNextStage
+
+>>> 5.3.7 - WizardOnFinish
+
 
 >=========================
 >1.Containers
@@ -254,15 +310,30 @@
 
 ```
 >>> #### 1.3.2.ContainerOnBack
->>
+>> This event occurs when the return button (both the physical button on the phone and in software) is pressed. This event occurs Basic paramteres: "id", "method", "serviceName". Example:
 >>
 >
 
 ```javascript
-
+        "id":0, 
+        "name":"Test", 
+        "label":"test", 
+        "showFooter" : true,
+        "showHeader" : true,
+        "footer" : "component/footer.html", // footer
+        "events":[ // events
+            {
+                "id": 0, // event id
+                "name": "ContainerOnBack", // serviceName
+                "expression" : "ScreenService.goBack()" // code
+            }
+            
+        ],
+        "template":"container/tabbedContainer.html",
+        "widgets": [{}]
 ```
 >>> #### 1.3.3.ContainerBeforeClose
->>
+>> This event occurs before the container is closed. Basic paramteres: "id", "method", "serviceName". Example:
 >>
 >
 
@@ -270,23 +341,53 @@
 
 ```
 >>> #### 1.3.4.ContainerAfterinit
->>
+>> This event occurs after the container is initialized. Basic paramteres: "id", "method", "serviceName". Example:
 >>
 >
 
 ```javascript
+    "id": 0,
+    "name": Test,
+    "label": "Teste",
+    "showFooter": true,
+    "showHeader": true,
+    "footer": "component/footer-wizard.html",
+    "template": "container/window.html",
+    "events": [ // events
+        {
+            "id":0, // id
+            "name": "ContainerAfterinit", // serviceName
+            "code": "args.owner.widgets[0].newRow();" // code
+        }
+    ]
+    "widgets":[{}]
 
 ```
 >>> #### 1.3.5.ContainerBeforeinit
->>
+>>  This event occurs before the container is initialized. Basic paramteres: "id", "method", "serviceName". Example:
 >>
 >
 
 ```javascript
+    "id": 0,
+    "name": Test,
+    "label": "Teste",
+    "showFooter": true,
+    "showHeader": true,
+    "footer": "component/footer-wizard.html",
+    "template": "container/window.html",
+    "events": [ // events
+        {
+            "id":0, // id
+            "name": "ContainerBeforeinit", // serviceName
+            "code": ""developerStudioMethods.initialize(args.owner);"" // code
+        }
+    ]
+    "widgets":[{}]
 
 ```
 >>> #### 1.3.6.ContainerAfterOpenreport
->>
+>> Basic paramteres: "id", "method", "serviceName". Example:
 >>
 >
 
@@ -931,12 +1032,38 @@ A label field. Basic parameters: "name", "label", "isVisible", "size", "class", 
 
 
 >>> #### 3.1.11.list.html
->>
+>> This field is a list. Basic parameters: 
 >>
 >
 
 ```javascript
-
+                    "name": "datasource_id",
+                    "label": "Choose a datasource",
+                    "size": 120,
+                    "class": 12,
+                    "sameLine": true,
+                    "isVisible": true,
+                    "readOnly": false,
+                    "template": "field/list.html",
+                    "events": [
+                        {
+                            "id": 1,
+                            "name": "FieldOnChange",
+                            "code": "developerStudioMethods.loadMetaColumns(args);" // code - loads the data in the list
+                        }
+                    ],
+                    "placeholder": " list",
+                    "minimumInputLength": 1,
+                    "isMultiple": false,
+                    "maximumSelectionSize": 1,
+                    "descriptionField": "NAME",
+                    "valueField": "DATASOURCE_ID",
+                    "dataSource": {
+                        "localStorage": true,
+                        "name": "/dataSourceReference",
+                        "data": [
+                            
+                        ]
 ```
 
 >>> #### 3.1.12.number-edit.html
@@ -1338,4 +1465,178 @@ This event occurs before the current row to be modified. Basic parameters: "id",
 
 ```
 
+>=========================
+>4.Components
+>=========================
+>=========================
+>
+>>### 4.1 - actionsForm.html
 
+>>### 4.2 - actionsGrid.html
+
+>>### 4.3 - alert.html
+
+>>### 4.4 - footer-edit.html
+
+>>### 4.5 - footer-field-edit.html
+
+>>### 4.6 - footer-field.html
+
+>>### 4.7 - footer-input.html
+
+>>### 4.8 - footer-list-form.html
+
+>>### 4.9 - footer.html
+
+>>### 4.10 - head.html
+
+>>### 4.11 - header.html
+
+>>### 4.12 - menu.html
+ 
+>>### 4.13 - messages.html
+
+>>### 4.14 - popup.html
+
+>>### 4.15 - tabs.html
+
+>=========================
+>5. Wizard 
+>=========================
+>=========================
+>
+>>### 5.1.General
+ The wizard is a "step-to-step" program, that guides the user through a determinate sequence of windows. The wizard can be used in a lot of situations: installers, registration forms, etc. In our example, we have a "Sign Up" wizard. Example: 
+ >>
+ >
+ 
+ ```javascript
+    "id": 1234, //id
+    "name": "signUpWizard", // name
+    "label": "Sign Up", // label
+    "type": "wizard", //type 
+    "currentStageName": "registerInit", 
+    "history": [],
+    "stages": { // stages of wizard
+        "registerInit": { // first stage
+            "name": "registerInit",
+            "window": "registerInit", // the first "window" of wizard
+            "events": [ // events
+                {
+                    "id": 1, // id
+                    "name": "WizardBeforeNextStage", // serviceName
+                    "code": "RegisterWizardController.onNextStage(args)" // code
+                }
+            ],
+            "nextStages": [ // determines the next stages of wizard
+                {
+                    "name": "registerAddress", // name
+                    "route": "registerAddress" // route
+                }
+            ]
+        }, 
+        "registerAddress": { // second and last stage
+            "name": "registerAddress", // servicename
+            "window": "registerAddress", // window
+            "events": [ // events
+                {
+                    "id": 2, // id
+                    "name": "WizardOnFinish", // serviceName
+                    "code": "RegisterWizardController.onFinish()" // code
+                }
+            ],
+            "nextStages": [] // don´t have next stages
+        }
+    }
+}
+ ```
+ 
+>>### 5.2.Methods
+ The methods are the functions of wizard.
+ 
+>>>#### 5.2.1.RegisterWizardController.onNextStage(args):
+ This function points to the next stage.   
+ 
+>>>#### 5.2.2.RegisterWizardController.onFinish() :
+ This function open a register conclusion window. No have parameters.
+
+>>### 5.3.Events
+Events are actions that are performed when there is interaction with the wizard.
+
+>>>### 5.3.1 - WizardOnDecision
+ This event occurs when there is possibility to decide for what stage will the wizard. Basic parameters: "id", "serviceName", "code". Example:
+ >>
+ >
+ 
+ ```javascript
+                    "id": 2, // id
+                    "name": "WizardOnDecision", // serviceName
+                    "code": "RegisterWizardController.onFinish()" // code
+   ```      
+
+>>>### 5.3.2 - WizardAfterOpenStage
+ This event occurs after the wizard open a stage. Basic parameters: "id", "serviceName", "code". Example:
+ >>
+ >
+ 
+ ```javascript
+                    "id": 2, // id
+                    "name": "WizardAfterOpenStage", // serviceName
+                    "code": "RegisterWizardController.onNextStage(args)" // code
+   ```      
+
+>>>### 5.3.3 - WizardBeforePreviousStage
+ This event occurs before the wizard returns to previous stage. Basic parameters: "id", "serviceName", "code". Example:
+ >>
+ >
+ 
+ ```javascript
+                    "id": 2, // id
+                    "name": "WizardBeforePreviousStage", // serviceName
+                    "code": "RegisterWizardController.onFinish()" // code
+   ```      
+
+>>>### 5.3.4 - WizardAfterNextStage
+ This event occurs after the wizard pass to next stage. Basic parameters: "id", "serviceName", "code". Example:
+ >>
+ >
+ 
+ ```javascript
+                    "id": 2, // id
+                    "name": "WizardAfterNextStage", // serviceName
+                    "code": "RegisterWizardController.onFinish()" // code
+   ```      
+
+>>>### 5.3.5 - WizardAfterPreviousStage
+ This event occurs after the wizard returns to previous stage. Basic parameters: "id", "serviceName", "code". Example:
+ >>
+ >
+ 
+ ```javascript
+                    "id": 2, // id
+                    "name": "WizardPreviousStage", // serviceName
+                    "code": "RegisterWizardController.onFinish()" // code
+   ```      
+
+>>>#### 5.3.6.WizardBeforeNextStage
+ This event occurs before wizard go to the next stage. Basic parameters: "id", "serviceName", "code". Example:
+ >>
+ >
+ 
+ ```javascript
+                    "id": 1, // id
+                    "name": "WizardBeforeNextStage", // serviceName
+                    "code": "RegisterWizardController.onNextStage(args)" //  code
+ ```
+>>>#### 5.3.7.WizardOnFinish
+This event occurs when the wizard is finished. Basic parameters: "id", "serviceName", "code". Example:
+ >>
+ >
+ 
+ ```javascript
+                    "id": 2, // id
+                    "name": "WizardOnFinish", // serviceName
+                    "code": "RegisterWizardController.onFinish()" // code
+   ```                    
+ 
+ 
