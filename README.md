@@ -33,7 +33,7 @@
 >> 2.1 - Templates
 >>> 2.1.1 - black-strip.html
 
->>> 2.1.2 - chat-gauge.html
+>>> 2.1.2 - chart-gauge.html
 
 >>> 2.1.3 - chart-morris.html
 
@@ -215,6 +215,9 @@
 
 >>> 5.3.7 - WizardOnFinish
 
+> 6 - Serviços
+>> 6.1 - ScreenService
+
 
 >=========================
 >1.Containers
@@ -298,6 +301,99 @@
 ```
 
 >>###1.2.Methods
+ The methods are the functions of the containers. They can be found in the container class(var container = function() { ), in main.js. 
+ >>> #### 1.2.1.refresh():
+  This method refreshes the container. Example:
+  >>
+  >
+  
+  ```javascript
+        this.refresh = function(){
+        setTimeout(function(){
+            if(self.scrollers){ 
+                self.scrollers.forEach(function(scroller){ 
+                    scroller.refresh(); // refresh the scroller
+                });
+            }
+        }, 1000);
+    }
+  
+  ```
+  
+  >>> #### 1.2.2.getParent():
+  This method gets the parent container. Example:
+  >>
+  >
+  
+  ```javascript
+        this.getParent = function(){
+        return null;
+    }
+  
+  ```
+  
+  >>> #### 1.2.3.setVar():
+  This method sets the container. Example:
+  >>
+  >
+  
+  ```javascript
+        this.setVar = function(){
+    }
+  
+  ```
+  
+  >>> #### 1.2.4.getVar():
+  This method gets the container. Example:
+  >>
+  >
+  
+  ```javascript
+         this.getVar = function(){
+    }
+  
+  ```
+  
+  >>> #### 1.2.5.getWidget():
+  This method gets a widget in the container. Example:
+  >>
+  >
+  
+  ```javascript
+        this.getWidget = function(name){ // name of widget
+        return this.widgets.filter(function(item){
+            return item.name === name;
+        })[0];
+    }
+  
+  ```
+  
+  >>> #### 1.2.6.getActions():
+  This method gets the actions of container. Example:
+  >>
+  >
+  
+  ```javascript
+        this.getActions = function(showType){ 
+        if(!this.actions){
+            this.actions = [];
+            this.widgets
+            .filter(function(widget){
+                return widget.active;
+            })
+            .forEach(function(widget){
+                this.actions = this.actions.concat(widget.actions);
+            }.bind(this)
+
+            );                
+        }
+        var ret = this.actions.filter(function(action){
+            return action.showAsAction === showType || showType === undefined;
+        });
+        return ret;
+    };
+  
+  ```
 
 >>###1.3.Events
  Events are actions that are performed when there is interaction with the container.
@@ -686,6 +782,213 @@
 ```
 
 >>###2.2.Methods
+ The methods are the functions of the widgets. They can be found in the widget class(var Widget = function() { ), in main.js. 
+>> ####2.2.1.moveToFirst():
+>> This method moves the current row to first row. Example:
+>>
+>
+
+```javascript
+        this.moveToFirst = function(){
+        this.setCurrentRow(this.dataSource.getFirstRow());
+    }
+```
+
+>> ####2.2.2.getParent():
+>> This method gets the parent widget. Example:
+>>
+>
+
+```javascript
+        this.getParent = function(){
+        return this.container;
+    }
+```
+
+>> ####2.2.3.moveToLast():
+>> This method moves the current row to last row. Example:
+>>
+>
+
+```javascript
+        this.moveToLast = function(){
+        this.setCurrentRow(this.dataSource.getLastRow());
+    }
+```
+
+>> ####2.2.4.getDataSourceFilter():
+>> This method gets the DataSource filter. Example:
+>>
+>
+
+```javascript
+        this.getDataSourceFilter = function(){
+        if(this.dataSourceFilter){
+            result = Util.clone(this.dataSourceFilter).map(function(item){
+                var tempItem = Util.clone(item);
+                tempItem.value = Util.evaluate(tempItem .value);
+                return tempItem;
+            });
+        }else{
+            result = [];
+        }
+        return result;
+    }
+```
+
+>> ####2.2.5.reload():
+>> This method reload thw widget. Example:
+>>
+>
+
+```javascript
+        this.reload =  function(){
+        if(this.dataSource){
+            return this.dataSource.load(this.getDataSourceFilter(), 1, this.container.refresh);
+        } else {
+            return {
+                then : function(fullfil){
+                    return fullfil ? fullfil() : this;
+                }
+            };
+        }
+    }
+```
+
+>> ####2.2.6.nextPage():
+>> Example:
+>>
+>
+
+```javascript
+        this.nextPage =  function(){
+        if(this.dataSource)
+            this.dataSource.load(this.getDataSourceFilter(), this.dataSource.getNextPage());
+    }
+```
+
+>> ####2.2.7.order():
+>> This method sorts the widget. Example:
+>>
+>
+
+```javascript
+        this.order =  function(){
+    }
+```
+
+>> ####2.2.8.saveRow():
+>> This method saves the row.Example:
+>>
+>
+
+```javascript
+        this.saveRow =  function(){
+        if (this.currentRow) {
+            this.currentRow.changed = true;
+            if(this.dataSource.data.indexOf(this.currentRow) === -1){
+                this.dataSource.data.push(this.currentRow);
+            }
+            return this.dataSource.save();
+        } else {
+            throw 'Current row is undefinded. Unable to save row.';
+        }
+    }
+```
+
+>> ####2.2.9.newRow():
+>> Example:
+>>
+>
+
+```javascript
+       this.newRow =  function(){
+        if(this.dataSource){
+            this.dataSource.newRow();
+            // this.setCurrentRow(this.dataSource.data.length-1);
+            var data = this.dataSource.data;
+            this.setCurrentRow(data[data.length-1]);
+            for (var i in this.fields) {
+                if (this.fields.hasOwnProperty(i)) {
+                    item = this.fields[i];
+                    item.applyDefaultValue();
+                }
+            }
+
+            this.editing = true;
+        }
+    }
+```
+
+>> ####2.2.10.lastIntex():
+>> Example:
+>>
+>
+
+```javascript
+        this.lastIntex =  function(){
+        return this.dataSource.length -1;
+    }
+```
+
+>> ####2.2.11.remove():
+>> Example:
+>>
+>
+
+```javascript
+       this.remove =  function(){
+        this.dataSource.remove(this.currentRow).then((function() {
+            this.reload();
+        }).bind(this));
+    }
+```
+
+>> ####2.2.12.sync():
+>> This method synchronizes the widget. Example:
+>>
+>
+
+```javascript
+        this.sync =  function(){
+        if (this.onSync) {
+            this.onSync();
+        }
+        return this.dataSource.sync();
+    }
+```
+
+>> ####2.2.13.setCurrentRow():
+>> This method sets the current row.Example:
+>>
+>
+
+```javascript
+        this.setCurrentRow = function(row){
+        if(this.beforeMoveRow){
+            this.beforeMoveRow();
+        }
+        // this.currentRowIdex = index;
+        this.currentRow = row;
+        //this.oldValues = Util.clone(row);
+        if(this.afterMoveRow){
+            this.afterMoveRow();
+        }
+    }
+```
+
+>> ####2.2.14.getField():
+>> This methods gets a field of the widget.Example:
+>>
+>
+
+```javascript
+       this.getField =  function(name){
+        return this.fields.filter(function(item){
+            return item.name === name;
+        })[0];
+    }
+```
 
 >>###2.3.Events
 Events are actions that are performed when there is interaction with the widgets.
@@ -1282,6 +1585,114 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
 ```
 
 >>###3.2.Methods
+ The methods are the functions of the fields. They can be found in the field class(var Field = function() { ), in main.js. 
+ >>> ####3.2.1.reload():
+  This method reload the datasource. Example:
+  >>
+  >
+  
+  ```javascript
+        this.reload = function(){ // reload function
+        if(this.dataSource)
+            return this.dataSource.load(this.dataSourceFilter);
+            // return the loaded Datasource
+        else {
+            return {
+                then : function(fullfil){
+                    fullfil ? fullfil() : null;
+                }
+            };
+        }
+    }
+    
+    ```
+  
+ >>> ####3.2.2.getDatasource():
+  This method gets the Datasource. Example:
+ >>
+ >
+ 
+ ```javascript
+        this.getDatasource = function(){
+    }
+    ```
+    
+>>> ####3.2.3.show():
+ This method shows the field. Example:
+ >>
+ >
+ 
+ ```javascript
+        this.show = function(){
+    }
+    ```
+    
+>>> ####3.2.4.hide():
+ This method hides the field. Example:
+ >>
+ >
+ 
+ ```javascript
+        this.hide = function(){
+    }
+    ```
+    
+>>> ####3.2.5.getParent():
+ This method gets the parent field. Example:
+ >>
+ >
+ 
+ ```javascript
+        this.getParent = function(){
+        return this.widget; // return the widget in which the field is
+    }
+    ```
+    
+>>> ####3.2.6.setCurrentRow():
+ This method sets the current row. Example:
+ >>
+ >
+ 
+ ```javascript
+        this.setCurrentRow = function(row){
+        if(this.beforeMoveRow){
+            this.beforeMoveRow();
+        }
+        // this.currentRowIdex = index;
+        this.currentRow = row;
+        //this.oldValues = Util.clone(row);
+        if(this.afterMoveRow){
+            this.afterMoveRow();
+        }
+    }
+    ```
+    
+>>> ####3.2.7.value():
+  This method sets a value in the field. Example:
+ >>
+ >
+ 
+ ```javascript
+        this.vlaue = function(value){
+        if( typeof value !== "undefined"){
+            this.widget.currentRow[this.name] = value;
+        }else{
+            return this.widget.currentRow[this.name];
+        }
+    }
+    ```
+    
+>>> ####3.2.8.applyDefaultValue():
+ This method defines a default value for the field. Example:
+ >>
+ >
+ 
+ ```javascript
+        this.applyDefaultValue = function(){
+         this.widget.currentRow[this.name] = this.defaultValue === undefined ? "" : Util.evaluate(this.defaultValue);
+    }
+    ```    
+
 
 >>###3.3.Events
 Events are actions that are performed when there is interaction with the fields.
@@ -1472,31 +1883,45 @@ This event occurs before the current row to be modified. Basic parameters: "id",
 >
 >>### 4.1 - actionsForm.html
 
+
 >>### 4.2 - actionsGrid.html
+
 
 >>### 4.3 - alert.html
 
+
 >>### 4.4 - footer-edit.html
+
 
 >>### 4.5 - footer-field-edit.html
 
+
 >>### 4.6 - footer-field.html
+
 
 >>### 4.7 - footer-input.html
 
+
 >>### 4.8 - footer-list-form.html
+
 
 >>### 4.9 - footer.html
 
+
 >>### 4.10 - head.html
+
 
 >>### 4.11 - header.html
 
+
 >>### 4.12 - menu.html
+
  
 >>### 4.13 - messages.html
 
+
 >>### 4.14 - popup.html
+
 
 >>### 4.15 - tabs.html
 
@@ -1638,5 +2063,9 @@ This event occurs when the wizard is finished. Basic parameters: "id", "serviceN
                     "name": "WizardOnFinish", // serviceName
                     "code": "RegisterWizardController.onFinish()" // code
    ```                    
- 
+
+>=========================
+>6.Services
+>=========================
+>========================= 
  
