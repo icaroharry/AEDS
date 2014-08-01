@@ -4,8 +4,11 @@
 ###Table of Contents
 =================
 >
+
 > 1 - Containers
+
 >> 1.1 - Templates
+
 >>> 1.1.1 - developerStudio.html
 
 >>> 1.1.2 - tabbed.html
@@ -16,7 +19,21 @@
 
 >> 1.2 - Methods
 
+>>> 1.2.1.refresh()
+
+>>> 1.2.3.setVar()
+
+>>> 1.2.2.getParent()
+
+>>> 1.2.4.getVar()
+
+>>> 1.2.5.getWidget()
+
+>>> 1.2.6.getActions()
+
+
 >> 1.3 - Events
+
 >>> 1.3.1 - ContainerAfterClose
 
 >>> 1.3.2 - ContainerOnBack
@@ -29,47 +46,95 @@
 
 >>> 1.3.6 - ContainerAfterOpenreport
 
+
 > 2 - Widgets
+
 >> 2.1 - Templates
->>> 2.1.1 - black-strip.html
 
->>> 2.1.2 - chart-gauge.html
+>>> 2.1.1.black-strip.html
 
->>> 2.1.3 - chart-morris.html
+>>> 2.1.2.chart-gauge.html
 
->>> 2.1.4 - container_row.html
+>>> 2.1.3.chart-morris.html
 
->>> 2.1.5 - form-center-top.html
+>>> 2.1.4.container_row.html
 
->>> 2.1.6 - form-main.html
+>>> 2.1.5.form_center_row.html
 
->>> 2.1.7 - form-view-edit.html
+>>> 2.1.6.form-main.html
 
->>> 2.1.8 - form-view.html
+>>> 2.1.7.form-view-edit.html
 
->>> 2.1.9 - form.html
+>>> 2.1.8.form-view.html
 
->>> 2.1.10 - list-grouped.html
+>>> 2.1.9.form-without-scholler.html
 
->>> 2.1.11 - list.html
+>>> 2.1.10.form.html
 
->>> 2.1.12 - list_checkbox.html
+>>> 2.1.11.funtions-template.html
 
->>> 2.1.13 - list_mobile.html
+>>> 2.1.12.list-grouped.html
 
->>> 2.1.14 - message.html
+>>> 2.1.13.list-popup.html
 
->>> 2.1.15 - sub-header.html
+>>> 2.1.14.list.html
 
->>> 2.1.16 - tabbedWidget.html
+>>> 2.1.15.list_checkbox.html
 
->>> 2.1.17 - table.html
+>>> 2.1.16.list_mobile.html
 
->>> 2.1.18 - waiter_tables.html
+>>> 2.1.17.production-message.html
+
+>>> 2.1.18.sub-header.html
+
+>>> 2.1.19.tab-widget-parent.html
+
+>>> 2.1.20.tabbedWidget.html
+
+>>> 2.1.21.table.html
+
+>>> 2.1.22.waiter-group.html
+
+>>> 2.1.23.waiter-list.html
+
+>>> 2.1.24.waiter_orders.html
+
+>>> 2.1.25.waiter_position.html
+
+>>> 2.1.26.waiter_tables.html
 
 >> 2.2 - Methods
 
+>>> 2.2.1.moveToFirst()
+
+>>> 2.2.2.getParent()
+
+>>> 2.2.3.moveToLast()
+
+>>> 2.2.4.getDataSourceFilter()
+
+>>> 2.2.5.reload()
+
+>>> 2.2.6.nextPage()
+
+>>> 2.2.7.order()
+
+>>> 2.2.8.saveRow()
+
+>>> 2.2.9.newRow()
+
+>>> 2.2.10.lastIntex()
+
+>>> 2.2.11.remove()
+
+>>> 2.2.12.sync()
+
+>>> 2.2.13.setCurrentRow()
+
+>>> 2.2.14.getField()
+
 >>2.3 - Events
+
 >>> 2.3.1 - WidgetAfterMoveRow
 
 >>> 2.3.2 - WidgetBeforeMoveRow
@@ -87,10 +152,11 @@
 >>> 2.3.8 - WidgetOnSave
 
 >>> 2.3.9 - WidgetOnInitDataSource
->>> 
 
 > 3 - Fields
+
 >> 3.1 - Templates
+
 >>> 3.1.1 - big-button.html
 
 >>> 3.1.2 - button.html
@@ -155,9 +221,41 @@
 
 >> 3.2 - Methods
 
+>>> 3.2.1.reload()
+
+>>> 3.2.2.getDatasource()
+
+>>> 3.2.3.show()
+
+>>> 3.2.4.hide()
+
+>>> 3.2.5.getParent()
+
+>>> 3.2.6.setCurrentRow()
+
+>>> 3.2.7.value()
+
+>>> 3.2.8.applyDefaultValue()
+
 >> 3.3 - Events
 
+>>> 3.3.1.FieldOnChange
+
+>>> 3.3.2.FieldOnCancel
+
+>>> 3.3.3.FieldOnClick
+
+>>> 3.3.4.FieldOnBlur
+
+>>> 3.3.5.FieldOnKeypress
+
+>>> 3.3.6.FieldAfterMoveRow
+
+>>> 3.3.7.FieldBeforeMoveRow
+
+
 > 4 - Components
+
 >> 4.1 - actionsForm.html
 
 >> 4.2 - actionsGrid.html
@@ -190,16 +288,16 @@
 
 
 > 5 - Wizard
->> 5.1 - Geral
+
+>> 5.1 - General
 
 >> 5.2 - Methods
+
 >>> 5.2.1 - RegisterWizardController.onNextStage(args)
 
 >>> 5.2.2 - RegisterWizardController.onFinish() 
 
-
 >> 5.3 - Events
-
 
 >>> 5.3.1 - WizardOnDecision
 
@@ -215,9 +313,57 @@
 
 >>> 5.3.7 - WizardOnFinish
 
-> 6 - Serviços
+> 6 - Services
+
 >> 6.1 - ScreenService
 
+>>> 6.1.1 - editMode()
+
+>>> 6.1.2 - viewMode()
+
+>>> 6.1.3 - allowMultiSelect()
+
+>>> 6.1.4 - disableMultiSelect()
+
+>>> 6.1.5 - deselectAll()
+
+>>> 6.1.6 - closeFieldView()
+
+>>> 6.1.7 - closeFooter()
+
+>>> 6.1.8 - changeFooter()
+
+>>> 6.1.9 - defaultFooter()
+
+>>> 6.1.10 - saveChange()
+
+>>> 6.1.11 - cancelChange()
+
+>>> 6.1.12 - goBack()
+
+>>> 6.1.13 - getHistory()
+
+>>> 6.1.14 - changeFilter()
+
+>>> 6.1.15 - toggleFilter()
+
+>>> 6.1.16 - cancelFilter()
+
+>>> 6.1.17 - filterWidget()
+
+>>> 6.1.18 - _documentMouseDown()
+
+>>> 6.1.19 - openPopup()
+
+>>> 6.1.20 - updataScroller()
+
+>>> 6.1.21 - closePopup()
+
+>>> 6.1.22 - showMessage()
+
+>>> 6.1.23 - confirmMessage()
+
+>>> 6.1.24 - popUpOpen()
 
 >=========================
 >1.Containers
@@ -303,7 +449,7 @@
 >>###1.2.Methods
  The methods are the functions of the containers. They can be found in the container class(var container = function() { ), in main.js. 
  >>> #### 1.2.1.refresh():
-  This method refreshes the container. Example:
+  This method refreshes the container. Implementation:
   >>
   >
   
@@ -321,7 +467,7 @@
   ```
   
   >>> #### 1.2.2.getParent():
-  This method gets the parent container. Example:
+  This method gets the parent container. Implementation:
   >>
   >
   
@@ -333,7 +479,7 @@
   ```
   
   >>> #### 1.2.3.setVar():
-  This method sets the container. Example:
+  This method sets the container. Implementation:
   >>
   >
   
@@ -344,7 +490,7 @@
   ```
   
   >>> #### 1.2.4.getVar():
-  This method gets the container. Example:
+  This method gets the container. Implementation:
   >>
   >
   
@@ -355,7 +501,7 @@
   ```
   
   >>> #### 1.2.5.getWidget():
-  This method gets a widget in the container. Example:
+  This method gets a widget in the container. Implementation:
   >>
   >
   
@@ -369,7 +515,7 @@
   ```
   
   >>> #### 1.2.6.getActions():
-  This method gets the actions of container. Example:
+  This method gets the actions of container. Implementation:
   >>
   >
   
@@ -784,7 +930,7 @@
 >>###2.2.Methods
  The methods are the functions of the widgets. They can be found in the widget class(var Widget = function() { ), in main.js. 
 >> ####2.2.1.moveToFirst():
->> This method moves the current row to first row. Example:
+>> This method moves the current row to first row. Implementation:
 >>
 >
 
@@ -795,7 +941,7 @@
 ```
 
 >> ####2.2.2.getParent():
->> This method gets the parent widget. Example:
+>> This method gets the parent widget. Implementation:
 >>
 >
 
@@ -806,7 +952,7 @@
 ```
 
 >> ####2.2.3.moveToLast():
->> This method moves the current row to last row. Example:
+>> This method moves the current row to last row. Implementation:
 >>
 >
 
@@ -817,7 +963,7 @@
 ```
 
 >> ####2.2.4.getDataSourceFilter():
->> This method gets the DataSource filter. Example:
+>> This method gets the DataSource filter. Implementation:
 >>
 >
 
@@ -837,7 +983,7 @@
 ```
 
 >> ####2.2.5.reload():
->> This method reload thw widget. Example:
+>> This method reload the widget. Implementation:
 >>
 >
 
@@ -856,7 +1002,7 @@
 ```
 
 >> ####2.2.6.nextPage():
->> Example:
+>> Implementation:
 >>
 >
 
@@ -868,7 +1014,7 @@
 ```
 
 >> ####2.2.7.order():
->> This method sorts the widget. Example:
+>> This method sorts the widget. Implementation:
 >>
 >
 
@@ -878,7 +1024,7 @@
 ```
 
 >> ####2.2.8.saveRow():
->> This method saves the row.Example:
+>> This method saves the row. Implementation:
 >>
 >
 
@@ -897,7 +1043,7 @@
 ```
 
 >> ####2.2.9.newRow():
->> Example:
+>>This method creates a new row. Implementation:
 >>
 >
 
@@ -921,7 +1067,7 @@
 ```
 
 >> ####2.2.10.lastIntex():
->> Example:
+>> Implementation:
 >>
 >
 
@@ -932,7 +1078,7 @@
 ```
 
 >> ####2.2.11.remove():
->> Example:
+>> This method removes the widget. Implementation:
 >>
 >
 
@@ -945,7 +1091,7 @@
 ```
 
 >> ####2.2.12.sync():
->> This method synchronizes the widget. Example:
+>> This method synchronizes the widget. Implementation:
 >>
 >
 
@@ -959,7 +1105,7 @@
 ```
 
 >> ####2.2.13.setCurrentRow():
->> This method sets the current row.Example:
+>> This method sets the current row. Implementation:
 >>
 >
 
@@ -978,7 +1124,7 @@
 ```
 
 >> ####2.2.14.getField():
->> This methods gets a field of the widget.Example:
+>> This methods gets a field of the widget. Implementation:
 >>
 >
 
@@ -1587,7 +1733,7 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
 >>###3.2.Methods
  The methods are the functions of the fields. They can be found in the field class(var Field = function() { ), in main.js. 
  >>> ####3.2.1.reload():
-  This method reload the datasource. Example:
+  This method reload the datasource. Implementation:
   >>
   >
   
@@ -1608,7 +1754,7 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
     ```
   
  >>> ####3.2.2.getDatasource():
-  This method gets the Datasource. Example:
+  This method gets the Datasource. Implementation:
  >>
  >
  
@@ -1618,7 +1764,7 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
     ```
     
 >>> ####3.2.3.show():
- This method shows the field. Example:
+ This method shows the field. Implementation:
  >>
  >
  
@@ -1628,7 +1774,7 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
     ```
     
 >>> ####3.2.4.hide():
- This method hides the field. Example:
+ This method hides the field. Implementation:
  >>
  >
  
@@ -1638,7 +1784,7 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
     ```
     
 >>> ####3.2.5.getParent():
- This method gets the parent field. Example:
+ This method gets the parent field. Implementation:
  >>
  >
  
@@ -1649,7 +1795,7 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
     ```
     
 >>> ####3.2.6.setCurrentRow():
- This method sets the current row. Example:
+ This method sets the current row. Implementation:
  >>
  >
  
@@ -1668,7 +1814,7 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
     ```
     
 >>> ####3.2.7.value():
-  This method sets a value in the field. Example:
+  This method sets a value in the field. Implementation:
  >>
  >
  
@@ -1683,7 +1829,7 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
     ```
     
 >>> ####3.2.8.applyDefaultValue():
- This method defines a default value for the field. Example:
+ This method defines a default value for the field. Implementation:
  >>
  >
  
@@ -2068,4 +2214,314 @@ This event occurs when the wizard is finished. Basic parameters: "id", "serviceN
 >6.Services
 >=========================
 >========================= 
+
+>> 6.1.ScreenService
+
+>>> #### 6.1.1.editMode():
+ This method enables the edition of form-view widget. Implementation:
+>>
+>
+
+```javascript
+            widget {
+            "id": 7,
+            "name": "login",
+            "actions" : [],
+            "label": "Personal form",
+            "height" : "100%",
+            "class" : "12",
+            "isVisible": true,
+            "template": "widget/form-view.html",
+            "events":[{}]
+            "actions": 
+            [
+                {
+                    "label": "Edit",
+                    "name": "edit",
+                    "isVisible": true,
+                    "icon" : "filter",
+                    "showAsAction": "always",
+                    "events": [{
+                        "name" : "ActionEvent",
+                        "expression" : "ScreenService.editMode()"
+                    }] 
+    ```
+
+>>> #### 6.1.2.viewMode():
+ This method enables the visualization of form-view widget. Example:
+>>
+>
+
+```javascript
+            widget {
+            "id": 7,
+            "name": "login",
+            "actions" : [],
+            "label": "Personal form",
+            "height" : "100%",
+            "class" : "12",
+            "isVisible": true,
+            "template": "widget/form-view.html",
+            "events":[
+                {
+                    "id": 0,
+                    "name": "WidgetOnSave",
+                    "expression" : "ScreenService.viewMode()"
+                }
+```
+
+>>> #### 6.1.3.allowMultiSelect():
+ This method enables a multiple selection list. Example:
  
+ ```javascript
+                "fields" : [{
+                "name": "genre",
+                "label": "Select some states: ",
+                "size": 10,
+                "dataSource" : {
+                    "data" : [{
+                        "genre" : "AM"
+                    },{
+                        "genre" : "AL"
+                    },{
+                        "genre" : "AP"
+                    },{
+                        "genre" : "AM"
+                    },{
+                        "genre" : "BA"
+                    },{
+                        "genre" : "CE"
+                    },{
+                        "genre" : "DF"
+                    },{
+                        "genre" : "ES"
+                    },{
+                        "genre" : "GO"
+                    }]
+                },
+                "events" : [{
+                    "id": 0,
+                    "name": "FieldOnChange",
+                    "expression" : "ScreenService.allowMultiSelect()"
+                }],
+ ```
+
+>>> #### 6.1.4.disableMultiSelect():
+ This method disables a multiple selection list.
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.disableMultiSelect()"
+    
+ ```
+
+>>> #### 6.1.5.deselectAll():
+ This method select all the widget. Example:
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.allowMultiSelect("widget")"
+    
+ ```
+ 
+>>> #### 6.1.6.closeFieldView():
+ This method closes the field that is being viewed. Example:
+ 
+ ```javascript
+                "fields" : [{
+                "name": "genre",
+                "label": "Select a state",
+                "size": 10,
+                "dataSource" : {
+                    "data" : [{
+                        "genre" : "AM"
+                    },{
+                        "genre" : "AL"
+                    },{
+                        "genre" : "AP"
+                    },{
+                        "genre" : "AM"
+                    },{
+                        "genre" : "BA"
+                    },{
+                        "genre" : "CE"
+                    },{
+                        "genre" : "DF"
+                    },{
+                        "genre" : "ES"
+                    },{
+                        "genre" : "GO"
+                    }]
+                },
+                "events" : [{
+                    "id": 0,
+                    "name": "FieldOnCancel",
+                    "expression" : "ScreenService.closeFieldView()"
+                }],
+                ```
+
+>>> #### 6.1.7.closeFooter():
+ This method close the footer. Example:
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.closeFooter()"
+    
+ ```
+
+>>> #### 6.1.8.changeFooter():
+ This method changes the footer.
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.changeFooter("footerUrl)"
+    
+ ```
+ 
+>>> #### 6.1.9.defaultFooter():
+ This method defines a default footer.
+  
+ ```javascript
+                
+                "expression" : "ScreenService.defaultFooter()"
+    
+ ```
+ 
+>>> #### 6.1.10.saveChange():
+ This method saves the changes on the widgets. Example:
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.saveChange()"
+    
+ ```
+
+>>> #### 6.1.11.cancelChange():
+This method cancel the changes on the widgets. Example:
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.cancelChange()"
+    
+ ```
+
+
+>>> #### 6.1.12.goBack():
+ This method can be called when the user has a select field open. If that's the case, instead of opening the last window, it should run ScreenService.closeFieldView(). We detect whether it's open by checking if templateManager.fieldList is defined. If the user presses cancel, this is never called, but on the hardware back button, only __back__() is called, which then comes here. Example:
+ 
+ ```javascript
+        "id":0,
+        "name":"test",
+        "label":"test",
+        "showFooter" : true,
+        "showHeader" : true,
+        "footer" : "component/footer.html",
+        "events":[
+            {
+                "id": 0,
+                "name": "ContainerOnBack",
+                "expression" : "ScreenService.goBack()"
+            }
+            
+        ],
+        "template":"container/tabbed.html",
+        ```
+
+>>> #### 6.1.13.getHistory():
+ This method gets the history items. Example:
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.getHistory()"
+    
+ ```
+
+>>> #### 6.1.14.changeFilter("widget"):
+ This method changes the widget filter. Example:
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.changeFilter()"
+    
+ ```
+
+>>> #### 6.1.15.toggleFilter("widget"):
+ This method toggles the widget filter. Example:
+ 
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.toogleFilter()"
+    
+ ```
+
+>>> #### 6.1.16.cancelFilter():
+ This method cancel the widget filter. Example: 
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.cancelFilter()"
+    
+ ```
+
+>>> #### 6.1.17.filterWidget():
+ This method defines a filter for the widget. Example:
+ 
+```javascript
+                
+                "expression" : "ScreenService.filterWidget("filterWidget"", "widgets", "data")"
+    
+ ```
+
+>>> #### 6.1.18._documentMouseDown():
+ This method occurs when the mouse is clicked. Example: 
+ 
+  ```javascript
+                
+                "expression" : "ScreenService._documentMouseDown()"
+    
+ ``` 
+
+>>> #### 6.1.19.openPopup():
+ This method open a popup in the widget. Example:
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.openPopup("widget")"
+    
+ ``` 
+ 
+>>> #### 6.1.20.updataScroller():
+This method refreshes the scroller. Example:
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.updataScroller()"
+    
+ ``` 
+
+
+>>> #### 6.1.21.closePopup():
+ This method closes a popup in the widget. Example:
+ 
+ ```javascript
+                
+                "expression" : "ScreenService.closePopup()"
+    
+ ``` 
+
+
+>>> #### 6.1.22.showMessage():
+This method shows a message in the screen. Basic parameters: "message", "type", "icon". Example:
+ 
+ ```javascript
+ ScreenService.showMessage("This is a message", null, "exclamation");
+ ```
+
+>>> #### 6.1.23.confirmMessage():
+ This method exibes a confirmation message in the screen. Basic parameters: "message", "type", "sucess", "fail", "icon". Example:
+ 
+  ```javascript
+ ScreenService.showMessage("Show confirm", null, null, null, "questtion");
+ ```
+ >>> #### 6.1.24.popUpOpen():
