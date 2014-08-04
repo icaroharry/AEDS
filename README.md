@@ -293,9 +293,15 @@
 
 >> 5.2 - Methods
 
->>> 5.2.1 - RegisterWizardController.onNextStage(args)
+>>> 5.2.1 - RegisterWizardController.onNextStage()
 
 >>> 5.2.2 - RegisterWizardController.onFinish() 
+
+>>> 5.2.3 - init()
+
+>>> 5.2.4 - indexfyWizard()
+
+>>> 5.2.5 - getLastStep()
 
 >> 5.3 - Events
 
@@ -364,6 +370,14 @@
 >>> 6.1.23 - confirmMessage()
 
 >>> 6.1.24 - popUpOpen()
+
+>> 6.2 - ZHPromise
+
+>>> 6.2.1 - defer()
+
+>>> 6.2.2 - promise()
+
+>>> 6.2.3 - all()
 
 >=========================
 >1.Containers
@@ -2126,10 +2140,40 @@ This event occurs before the current row to be modified. Basic parameters: "id",
  The methods are the functions of wizard.
  
 >>>#### 5.2.1.RegisterWizardController.onNextStage(args):
- This function points to the next stage.   
+ This function points to the next stage. Example:
  
->>>#### 5.2.2.RegisterWizardController.onFinish() :
- This function open a register conclusion window. No have parameters.
+ ```javascript
+ "code": "RegisterWizardController.onNextStage(args)"
+ ```
+ 
+>>>#### 5.2.2.RegisterWizardController.onFinish():
+ This function open a register conclusion window. No have parameters. Example:
+ 
+ ```javascript
+ "code": "RegisterWizardController.onFinish()"
+ ```
+ 
+>>>### 5.2.3.init():
+ This function initializes the wizard. Example:
+ 
+ ```javascript
+ "code": "Wizard.init()"
+ ```
+ 
+>>>### 5.2.4.indexfyWizard():
+ This function attaches the stages of wizard. Example:
+ 
+ ```javascript
+ "code": "Wizard.indexfyWizard()"
+ ```
+ 
+>>>### 5.2.5.getLastStep():
+ This function returns the last step of wizard. Example:
+ 
+ ```javascript
+ "code": "Wizard.getLastStep()"
+ ```
+ 
 
 >>### 5.3.Events
 Events are actions that are performed when there is interaction with the wizard.
@@ -2218,7 +2262,7 @@ This event occurs when the wizard is finished. Basic parameters: "id", "serviceN
 >> 6.1.ScreenService
 
 >>> #### 6.1.1.editMode():
- This method enables the edition of form-view widget. Implementation:
+ This method enables the edition of form-view widget. Example:
 >>
 >
 
@@ -2515,13 +2559,35 @@ This method refreshes the scroller. Example:
 This method shows a message in the screen. Basic parameters: "message", "type", "icon". Example:
  
  ```javascript
- ScreenService.showMessage("This is a message", null, "exclamation");
+ "expresion" : "ScreenService.showMessage("This is a message", null, "exclamation")";
  ```
 
 >>> #### 6.1.23.confirmMessage():
  This method exibes a confirmation message in the screen. Basic parameters: "message", "type", "sucess", "fail", "icon". Example:
  
   ```javascript
- ScreenService.showMessage("Show confirm", null, null, null, "questtion");
+ "expresion" :"ScreenService.showMessage("Show confirm", null, null, null, "questtion")";
  ```
  >>> #### 6.1.24.popUpOpen():
+  This method open a popup. Example: 
+  
+  ```javascript
+  "expression" : "ScreenService.PopUpOpen()"
+  ``` 
+  
+ >> 6.2 - ZHPromise
+ 
+ Param {function} onFulfill: Callback to be binded to the promise's succes.
+ 
+ Param {function} onError: Callback to be binded to the promise's error.
+
+ Param {function} onNotify: Callback to be binded to the promise's notify.
+
+ >>>#### 6.2.1 - defer(onFulfill, onError, onNotify):
+  This method returns a deferred object that should expose resolve, reject and notify methods and also the promise property that should be a thenable.
+
+ >>>#### 6.2.2 - promise(onFulfill, onError, onNotify):
+  This method returns a promise.
+
+ >>>#### 6.2.3 - all(promises): 
+  This method returns all promisses.
