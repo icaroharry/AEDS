@@ -432,9 +432,9 @@
 
 >>> 6.6.2 - sendData()
 
->>> 6.6.3 - addListenner()
+>>> 6.6.3 - addListener()
 
->>> 6.6.4 - removeListenner()
+>>> 6.6.4 - removeListener()
 
 >>> 6.6.5 - notify()
 
@@ -2866,17 +2866,33 @@ Logger.NONE = 5;
  ```
 
 
->> 6.7 - RequestDataSourceEngine
+>> 6.7-RequestDataSourceEngine("restEngine","requestFactory","MethodBuilder","ScreenService")
 
->>>#### 6.7.1.getDataSource():
+>>>#### 6.7.1.getDataSource("name", "callBack", "filter", "page", "itemsPerPage", "errorCallBack"):
+ This function returns a request. If any problem occurs, the processError is called, else the setResult returns the request. Example:
+ 
+ ```javascript
+ RequestDataSourceEngine.getDataSource("name", "callBack", "filter", "page", "itemsPerPage", "errorCallBack")
+ ```
 
->>>#### 6.7.2.processError():
+>>>#### 6.7.2.var processError = function(e):
+ This function returns a errorCallBack.
 
->>>#### 6.7.3.setResult():
+>>>#### 6.7.3.var setResult = function("data"):
+ This function returns the request result.
 
->>>#### 6.7.4.setDataSource():
+>>>#### 6.7.4.setDataSource("name", "dataSource","callBack"):
+ This function sets a DataSource. Example:
+ 
+ ```javascript
+ RequestDataSourceEngine.setDataSource("name", "dataSource", "callBack")
+ ```
 
->>>#### 6.7.5.remove():
-
+>>>#### 6.7.5.remove("name", "row", "callBack"):
+ This function removes a data of DataSource. Example:
+ 
+ ```javascript
+ RequestDataSourceEngine.remove("name", "row", "callBack")
+ ```
 
 >> 6.8 - LocalStorageEngine
