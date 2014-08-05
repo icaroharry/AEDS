@@ -398,6 +398,28 @@
 
 >>> 6.3.8 - table()
 
+>> 6.4 - Repository
+
+>>> 6.4.1 - getFilters()
+
+>>> 6.4.2 - getWtihDataSource()
+
+>>> 6.4.3 - findAll()
+
+>>> 6.4.4 - download()
+
+>>> 6.4.5 - find()
+
+>>> 6.4.6 - findOne()
+
+>>> 6.4.7 - save()
+
+>>> 6.4.8 - saveInServer()
+
+>>> 6.4.9 - remove()
+
+>>> 6.4.10 - clearAll()
+
 
 >=========================
 >1.Containers
@@ -1784,7 +1806,6 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
             };
         }
     }
-    
     ```
   
  >>> ####3.2.2.getDatasource():
@@ -2605,10 +2626,10 @@ This method shows a message in the screen. Basic parameters: "message", "type", 
  >>>#### 6.2.1 - defer(onFulfill, onError, onNotify):
   This method returns a deferred object that should expose resolve, reject and notify methods and also the promise property that should be a thenable.
 
- >>>#### 6.2.2 - promise(onFulfill, onError, onNotify):
+ >>>#### 6.2.2.promise(onFulfill, onError, onNotify):
   This method returns a promise.
 
- >>>#### 6.2.3 - all(promises): 
+ >>>#### 6.2.3.all(promises): 
   This method returns all promisses.
   
 >> 6.3.ZHLogger
@@ -2617,14 +2638,14 @@ This method shows a message in the screen. Basic parameters: "message", "type", 
 function Logger (level) ->The verification for the existance of level is done upon instance creating.
 ```
 
->>>#### 6.3.1 - setLevel(LevelSetter):
+>>>#### 6.3.1.setLevel(LevelSetter):
  This method returns a level. Example:
  
  ```javascript
 "expression": "Logger.setLevel(LevelSetter)"
 ```
 
->>> 6.3.2 - var log = function(requestLevel, message, objectArray):
+>>>#### 6.3.2.var log = function(requestLevel, message, objectArray):
 
  The log shows a message according with the requestLevel in the console. Example: 
  
@@ -2642,7 +2663,7 @@ Logger.FATAL = 4;
 Logger.NONE = 5;
 ```
 
->>> 6.3.3 - debug():
+>>>#### 6.3.3.debug():
  This method shows a debug message in the console. Example:
  
  ```javascript
@@ -2650,7 +2671,7 @@ Logger.NONE = 5;
 //log(0, message, objectArray);
 ```
 
->>> 6.3.4 - info():
+>>>#### 6.3.4.info():
  This method shows a info message in the console. Example:
  
  ```javascript
@@ -2658,7 +2679,7 @@ Logger.NONE = 5;
 //log(1, message, objectArray);
 ```
 
->>> 6.3.5 - warning():
+>>>#### 6.3.5.warning():
  This method shows a warning message in the console. Example:
  
  ```javascript
@@ -2666,7 +2687,7 @@ Logger.NONE = 5;
 //log(2, message, objectArray);
 ```
 
->>> 6.3.6 - error():
+>>>#### 6.3.6.error():
  This method shows a error message in the console. Example:
  
  ```javascript
@@ -2674,7 +2695,7 @@ Logger.NONE = 5;
 //log(3, message, objectArray);
 ```
 
->>> 6.3.7 - fatal():
+>>>#### 6.3.7.fatal():
  This method shows a fatal message in the console. Example:
  
  ```javascript
@@ -2682,9 +2703,81 @@ Logger.NONE = 5;
 //log(1, message, objectArray);
 ```
 
->>> 6.3.8 - table():
+>>>#### 6.3.8.table():
  This method shows a table in the console. Example:
  
  ```javascript
 "expression": "Logger.table(objectArray, title, index)"
 ```
+
+>> 6.4.Repository (name, storageStrategy, templateManager, dataSourceHolder, ZhLogger)
+
+>>>#### 6.4.1.var getFilters = function(query):
+ This function returns the filters. Example:
+ 
+ ```javascript
+ Repository.getFilters("query")
+```
+
+>>>#### 6.4.2.var getWtihDataSource = function(name, query):
+ This method returns a DataSource. Example:
+ 
+ ```javascript
+ Repository.getWithDataSource("name","query")
+ ```
+
+>>>#### 6.4.3.findAll():
+ This function returns all DataSources that are in the storage. Example:
+ 
+ ```javascript
+ Repository.findAll()
+ ```
+
+>>>#### 6.4.4.download("query"):
+ This function returns a download. Example:
+ 
+ ```javascript
+ Repository.download("query")
+ ```
+
+>>>#### 6.4.5.find("query"):
+ This function returns a promise for all DataSources. Example:
+ 
+ ```javascript
+ Repository.find("query")
+ ```
+
+>>>#### 6.4.6.findOne("query"):
+ This function returns a promise for a specific DataSource. Example:
+ 
+ ```javascript
+ Repository.findOne("query")
+ ```
+
+>>>#### 6.4.7.save("data"):
+ This function saves a data. Example :
+ 
+ ```javascript
+ Repository.save("data")
+ ```
+
+>>>#### 6.4.8.saveInServer("dataSource"):
+ This function saves a DataSource in the repository. Example :
+ 
+ ```javascript
+ Repository.saveInServer("dataSource")
+ ```
+
+>>>#### 6.4.9.remove("query"):
+ This function removes a DataSource of repository. Example:
+
+ ```javascript
+ Repository.remove("query")
+ ```
+
+>>>#### 6.4.10.clearAll():
+ This function removes all things of repository. Example:
+ 
+  ```javascript
+ Repository.clearAll()
+ ```
