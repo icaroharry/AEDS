@@ -420,6 +420,38 @@
 
 >>> 6.4.10 - clearAll()
 
+>> 6.5 - SyncEngine
+
+>>> 6.5.1 - sync()
+
+>>> 6.5.2 - getCurrentDate()
+
+>> 6.6 - WorkerEngine
+
+>>> 6.6.1 - create()
+
+>>> 6.6.2 - sendData()
+
+>>> 6.6.3 - addListenner()
+
+>>> 6.6.4 - removeListenner()
+
+>>> 6.6.5 - notify()
+
+>> 6.7 - RequestDataSourceEngine
+
+>>> 6.7.1 - getDataSource()
+
+>>> 6.7.2 - processError()
+
+>>> 6.7.3 - setResult()
+
+>>> 6.7.4 - setDataSource()
+
+>>> 6.7.5 - remove()
+
+>> 6.8 - LocalStorageEngine
+
 
 >=========================
 >1.Containers
@@ -2781,3 +2813,70 @@ Logger.NONE = 5;
   ```javascript
  Repository.clearAll()
  ```
+ 
+>> 6.5 - SyncEngine("requestFactory", "localStorageEngine", "requestEngine", "templateManager")
+
+>>>#### 6.5.1.sync("serviceName", "data", "filters"):
+ This function synchronizes the elements in the widget. Example:
+ 
+ 
+  ```javascript
+ SyncEngine.sync("serviceName", "data", "filters")
+ ```
+
+>>>#### 6.5.2.var getCurrentDate = functionate():
+ This function returns the current date.
+
+
+>> 6.6 - WorkerEngine
+
+>>>#### 6.6.1.create("url"):
+ This function creates a new worker. Example:
+ 
+ ```javascript
+ ZhWebWorker.create("url")
+ ```
+
+>>>#### 6.6.2.sendData("data"):
+ This function sends the work data for a listener. Example:
+ 
+ ```javascript
+ ZhWebWorker.sendData("data")
+ ```
+
+>>>#### 6.6.3.addListener("listener"):
+ This function add a listener. Example:
+ 
+ ```javascript
+ ZhWebWorker.addListener("listener")
+ ```
+
+>>>#### 6.6.4.removeListener("listener"):
+ This function removes a listener. Example:
+ 
+ ```javascript
+ ZhWebWorker.removeListener("listener")
+ ```
+
+>>>#### 6.6.5.notify():
+ This function notifies a listener with a message. Example: 
+ 
+ ```javascript
+ ZhWebWorker.notify("message")
+ ```
+
+
+>> 6.7 - RequestDataSourceEngine
+
+>>>#### 6.7.1.getDataSource():
+
+>>>#### 6.7.2.processError():
+
+>>>#### 6.7.3.setResult():
+
+>>>#### 6.7.4.setDataSource():
+
+>>>#### 6.7.5.remove():
+
+
+>> 6.8 - LocalStorageEngine
