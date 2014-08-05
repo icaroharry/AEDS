@@ -319,6 +319,7 @@
 
 >>> 5.3.7 - WizardOnFinish
 
+
 > 6 - Services
 
 >> 6.1 - ScreenService
@@ -378,6 +379,25 @@
 >>> 6.2.2 - promise()
 
 >>> 6.2.3 - all()
+
+>> 6.3 - ZHLogger
+
+>>> 6.3.1 - setLevel()
+
+>>> 6.3.2 - log()
+
+>>> 6.3.3 - debug()
+
+>>> 6.3.4 - info()
+
+>>> 6.3.5 - warning()
+
+>>> 6.3.6 - error()
+
+>>> 6.3.7 - fatal()
+
+>>> 6.3.8 - table()
+
 
 >=========================
 >1.Containers
@@ -2275,9 +2295,9 @@ This event occurs when the wizard is finished. Basic parameters: "id", "serviceN
             "height" : "100%",
             "class" : "12",
             "isVisible": true,
-            "template": "widget/form-view.html",
+            "template": "widget/form-view.html", // form-view widget
             "events":[{}]
-            "actions": 
+            "actions":  //actions
             [
                 {
                     "label": "Edit",
@@ -2287,7 +2307,7 @@ This event occurs when the wizard is finished. Basic parameters: "id", "serviceN
                     "showAsAction": "always",
                     "events": [{
                         "name" : "ActionEvent",
-                        "expression" : "ScreenService.editMode()"
+                        "expression" : "ScreenService.editMode()" // screen-service
                     }] 
     ```
 
@@ -2523,7 +2543,6 @@ This method cancel the changes on the widgets. Example:
   ```javascript
                 
                 "expression" : "ScreenService._documentMouseDown()"
-    
  ``` 
 
 >>> #### 6.1.19.openPopup():
@@ -2572,16 +2591,16 @@ This method shows a message in the screen. Basic parameters: "message", "type", 
   This method open a popup. Example: 
   
   ```javascript
-  "expression" : "ScreenService.PopUpOpen()"
+  "expression" : "ScreenService.closePopup()"
   ``` 
   
- >> 6.2 - ZHPromise
+ >> 6.2.ZHPromise
  
- Param {function} onFulfill: Callback to be binded to the promise's succes.
+* Param {function} onFulfill: Callback to be binded to the promise's succes.
  
- Param {function} onError: Callback to be binded to the promise's error.
+* Param {function} onError: Callback to be binded to the promise's error.
 
- Param {function} onNotify: Callback to be binded to the promise's notify.
+* Param {function} onNotify: Callback to be binded to the promise's notify.
 
  >>>#### 6.2.1 - defer(onFulfill, onError, onNotify):
   This method returns a deferred object that should expose resolve, reject and notify methods and also the promise property that should be a thenable.
@@ -2591,3 +2610,81 @@ This method shows a message in the screen. Basic parameters: "message", "type", 
 
  >>>#### 6.2.3 - all(promises): 
   This method returns all promisses.
+  
+>> 6.3.ZHLogger
+
+```javascript
+function Logger (level) ->The verification for the existance of level is done upon instance creating.
+```
+
+>>>#### 6.3.1 - setLevel(LevelSetter):
+ This method returns a level. Example:
+ 
+ ```javascript
+"expression": "Logger.setLevel(LevelSetter)"
+```
+
+>>> 6.3.2 - var log = function(requestLevel, message, objectArray):
+
+ The log shows a message according with the requestLevel in the console. Example: 
+ 
+ ```javascript
+var log = function (requestLevel, message, objectArray)
+```
+
+```javascript
+ ---- request levels ---
+Logger.DEBUG = 0;
+Logger.INFO = 1;
+Logger.WARNING = 2;
+Logger.ERROR = 3;
+Logger.FATAL = 4;
+Logger.NONE = 5;
+```
+
+>>> 6.3.3 - debug():
+ This method shows a debug message in the console. Example:
+ 
+ ```javascript
+"expression": "Logger.debug(message, objectArray)"
+//log(0, message, objectArray);
+```
+
+>>> 6.3.4 - info():
+ This method shows a info message in the console. Example:
+ 
+ ```javascript
+"expression": "Logger.info(message, objectArray)"
+//log(1, message, objectArray);
+```
+
+>>> 6.3.5 - warning():
+ This method shows a warning message in the console. Example:
+ 
+ ```javascript
+"expression": "Logger.warning(message, objectArray)"
+//log(2, message, objectArray);
+```
+
+>>> 6.3.6 - error():
+ This method shows a error message in the console. Example:
+ 
+ ```javascript
+"expression": "Logger.error(message, objectArray)"
+//log(3, message, objectArray);
+```
+
+>>> 6.3.7 - fatal():
+ This method shows a fatal message in the console. Example:
+ 
+ ```javascript
+"expression": "Logger.fatal(message, objectArray)"
+//log(1, message, objectArray);
+```
+
+>>> 6.3.8 - table():
+ This method shows a table in the console. Example:
+ 
+ ```javascript
+"expression": "Logger.table(objectArray, title, index)"
+```
