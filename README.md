@@ -2146,13 +2146,13 @@ This event occurs before the current row to be modified. Basic parameters: "id",
 >=========================
 >
 >>### 4.1 - actionsForm.html
-
+ 
 
 >>### 4.2 - actionsGrid.html
 
 
 >>### 4.3 - alert.html
-
+ This component is a alert, a message for confirmation with the options "yes" and "no", for example. 
 
 >>### 4.4 - footer-edit.html
 
@@ -2182,10 +2182,11 @@ This event occurs before the current row to be modified. Basic parameters: "id",
 
  
 >>### 4.13 - messages.html
+ This component is a message: a window with a message.
 
 
 >>### 4.14 - popup.html
-
+ This component is a popup: a extra window with something(a message, a image, etc). The popups generally appears when an action is executed (like click in a field, acess a link, etc).
 
 >>### 4.15 - tabs.html
 
