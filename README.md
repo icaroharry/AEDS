@@ -452,6 +452,37 @@
 
 >> 6.8 - LocalStorageEngine
 
+>>> 6.8.1 - getDataSource()
+
+>>> 6.8.2 - save()
+
+>>> 6.8.3 - remove()
+
+>>> 6.8.4 - setDataSource()
+
+>>> 6.8.5 - getLocalVar()
+
+>>> 6.8.6 - setLocalVar()
+
+>>> 6.8.7 - download()
+
+>>> 6.8.8 - SaveInServer()
+
+>>> 6.8.9 - sync()
+
+>>> 6.8.10 - processFilter()
+
+>>> 6.8.11 - queryFilter()
+
+>>> 6.8.12 - likeFilter()
+
+>>> 6.8.13 - equalFilter()
+
+>>> 6.8.14 - notEqualFilter()
+
+>>> 6.8.15 - lessEqualFilter()
+
+>>> 6.8.16 - moreEqualFilter()
 
 >=========================
 >1.Containers
@@ -2895,4 +2926,117 @@ Logger.NONE = 5;
  RequestDataSourceEngine.remove("name", "row", "callBack")
  ```
 
->> 6.8 - LocalStorageEngine
+>> 6.8.LocalStorageEngine("ZhLogger", "requestDataSourceEngine", "requestFactory", "requestEngine", "templateManager", "DataSourceHolder", "ZHPromise") 
+
+>>>#### 6.8.1.getDataSource():
+ This function returns a DataSource of the LocalStorage. Example:
+ 
+ ```javascript
+ LocalStorageEngine.getDataSource()
+ ```
+
+>>>#### 6.8.2.save("name", "object"):
+ This function saves a DataSource in the LocalStorage. Example:
+ 
+ 
+ ```javascript
+ LocalStorageEngine.save("name", "object")
+ ```
+
+>>>#### 6.8.3.remove("name", "filters"):
+ This function removes a DataSource of the LocalStorage. Example:
+ 
+ ```javascript
+ LocalStorageEngine.remove("name", "filters")
+ ```
+
+>>>#### 6.8.4.setDataSource("name", "dataSource", "callBack"):
+ This function sets the DataSource in the LocalStorage. Example:
+ 
+ ```javascript
+ LocalStorageEngine.setDataSource("name", "dataSource", "callBack")
+ ```
+
+>>>#### 6.8.5.getLocalVar("name):
+ This function returns a item of the LocalStorage. Example:
+ 
+ ```javascript
+ LocalStorageEngine.getLocalVar("name")
+ ```
+ 
+>>>#### 6.8.6.setLocalVar("name","localVar"):
+ This function sets a item in the LocalStorage. Example:
+ 
+ ```javascript
+ LocalStorageEngine.setLocalVar("name","localVar")
+ ```
+
+>>>#### 6.8.7.download():
+ This function downloads a DataSource of the LocalStorage. Example:
+ 
+ ```javascript
+ LocalStorageEngine.download()
+ ```
+
+>>>#### 6.8.8.SaveInServer("name", "callBack", "dataSource"):
+ This function saves a DataSource in the server. Example:
+ 
+```javascript
+ LocalStorageEngine.SaveInServer("name", "callBack", "dataSource")
+ ``` 
+
+>>>#### 6.8.9.sync("name", "callBack", "filters"):
+ This function sinchronizes the LocalStorage. Example:
+ 
+ ```javascript
+ LocalStorageEngine.sync("name", "callBack", "filters")
+ ```
+ 
+ >>>#### 6.8.10 - processFilter("data", "filters"):
+  This function returns the filtered values. Example:
+  
+  ```javascript
+ LocalStorageEngine.processFilter("data", "filters")
+ ``` 
+
+>>>#### 6.8.11 - queryFilter("data", "queryParams"):
+ This function returns the data filtered by query parameters. Example:
+ 
+ ```javascript
+ LocalStorageEngine.queryFilter("data", "queryParams")
+ ```
+
+>>>#### 6.8.12 - likeFilter("data", "params"):
+This function returns the data filtered by parameters. Example:
+ 
+ ```javascript
+ LocalStorageEngine.queryFilter("data", "params")
+ ```
+
+>>>#### 6.8.13 - equalFilter("data", "params"):
+This function returns the data if the parameters are equals. Example:
+ 
+ ```javascript
+ LocalStorageEngine.queryFilter("data", "params")
+ ```
+
+>>>#### 6.8.14 - notEqualFilter("data", "params"):
+This function returns the data if the parameters are not equals. Example:
+ 
+ ```javascript
+ LocalStorageEngine.notEqualFilter("data", "params")
+ ```
+
+>>>#### 6.8.15 - lessEqualFilter("data", "params"):
+This function returns the data if the parameters are less equals. Example:
+ 
+ ```javascript
+ LocalStorageEngine.lessEqualFilter("data", "params")
+ ```
+
+>>>#### 6.8.16 - moreEqualFilter("data", "params"):
+This function returns the data if the parameters are more equals. Example:
+ 
+ ```javascript
+ LocalStorageEngine.moreEqualFilter("data", "params")
+ ```
