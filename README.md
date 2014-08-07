@@ -262,7 +262,7 @@
 
 >> 4.3 - alert.html
 
->> 4.4 - footer-edit.html
+>> 4.4 - footer.html
 
 >> 4.5 - footer-field-edit.html
 
@@ -272,7 +272,7 @@
 
 >> 4.8 - footer-list-form.html
 
->> 4.9 - footer.html
+>> 4.9 - footer-edit.html
 
 >> 4.10 - head.html
 
@@ -2154,32 +2154,32 @@ This event occurs before the current row to be modified. Basic parameters: "id",
 >>### 4.3 - alert.html
  This component is a alert, a message for confirmation with the options "yes" and "no", for example. 
 
->>### 4.4 - footer-edit.html
-
+>>### 4.4 - footer.html
+ This component is a footer. The actions are in the footer.
 
 >>### 4.5 - footer-field-edit.html
-
+ This component is a footer with an editable field.
 
 >>### 4.6 - footer-field.html
-
+ This component is a footer with a field.
 
 >>### 4.7 - footer-input.html
-
+ This component is a input footer.
 
 >>### 4.8 - footer-list-form.html
+ This component is a footer of a list.
 
-
->>### 4.9 - footer.html
-
+>>### 4.9 - footer-edit.html
+ This footer contains a save button and cancel button.
 
 >>### 4.10 - head.html
-
+ This component is a head. The head is like a title of the page. The head is a label in the top of page.
 
 >>### 4.11 - header.html
-
+ This component is a header. Header is the top of page. In the header can stay extra-informations, menus, logos, etc.
 
 >>### 4.12 - menu.html
-
+ This component is a menu. The menu is a side widget with some options that calls others widgets when they are selected.
  
 >>### 4.13 - messages.html
  This component is a message: a window with a message.
@@ -2189,6 +2189,7 @@ This event occurs before the current row to be modified. Basic parameters: "id",
  This component is a popup: a extra window with something(a message, a image, etc). The popups generally appears when an action is executed (like click in a field, acess a link, etc).
 
 >>### 4.15 - tabs.html
+ This component is a tab: tabs allows a elegant organization of different windows in the same window. With the tabs, is possible have several forms with different contents in a same window, for example.  
 
 >=========================
 >5. Wizard 
