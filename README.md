@@ -1,9 +1,9 @@
 ##Documentation
 ==================
->
-###Table of Contents
+
+###Table of Contents 
 =================
->
+[TOC]
 
 > 1 - Containers
 
@@ -29,7 +29,11 @@
 
 >>> 1.2.5.getWidget()
 
->>> 1.2.6.getActions()
+>>> 1.2.6.hasCheckedRows()
+
+>>> 1.2.7.getActionsTypeToShow()
+
+>>> 1.2.8.getActions()
 
 
 >> 1.3 - Events
@@ -132,6 +136,12 @@
 >>> 2.2.13.setCurrentRow()
 
 >>> 2.2.14.getField()
+
+>>> 2.2.15.getActions()
+
+>>> 2.2.16.isValid()
+
+>>> 2.2.17.hasCheckedRows()
 
 >>2.3 - Events
 
@@ -568,96 +578,75 @@
 >>###1.2.Methods
  The methods are the functions of the containers. They can be found in the container class(var container = function() { ), in main.js. 
  >>> #### 1.2.1.refresh():
-  This method refreshes the container. Implementation:
+  This method refreshes the container. Example:
   >>
   >
   
   ```javascript
-        this.refresh = function(){
-        setTimeout(function(){
-            if(self.scrollers){ 
-                self.scrollers.forEach(function(scroller){ 
-                    scroller.refresh(); // refresh the scroller
-                });
-            }
-        }, 1000);
-    }
-  
+   "expression" : "Container.refresh"
   ```
   
   >>> #### 1.2.2.getParent():
-  This method gets the parent container. Implementation:
+  This method returns the parent container. Example:
   >>
   >
   
   ```javascript
-        this.getParent = function(){
-        return null;
-    }
-  
+  "expression" : "Container.getParent()"
   ```
   
   >>> #### 1.2.3.setVar():
-  This method sets the container. Implementation:
+  This method sets the container. Example:
   >>
   >
   
   ```javascript
-        this.setVar = function(){
-    }
-  
+    "expression" : "Container.setVar()"
   ```
   
   >>> #### 1.2.4.getVar():
-  This method gets the container. Implementation:
+  This method gets the container. Example:
   >>
   >
   
   ```javascript
-         this.getVar = function(){
-    }
-  
+  "expression" : "Container.getVar()"
   ```
   
-  >>> #### 1.2.5.getWidget():
-  This method gets a widget in the container. Implementation:
+  >>> #### 1.2.5.getWidget("name"):
+  This method "gets" a widget in the container. Example:
   >>
   >
   
   ```javascript
-        this.getWidget = function(name){ // name of widget
-        return this.widgets.filter(function(item){
-            return item.name === name;
-        })[0];
-    }
-  
+     "expression" : "Container.getWidget("name")"
   ```
   
-  >>> #### 1.2.6.getActions():
-  This method gets the actions of container. Implementation:
+  >>> #### 1.2.6.hasCheckedRows():
+  his method verifies if the rows were checked. Example:
   >>
   >
   
   ```javascript
-        this.getActions = function(showType){ 
-        if(!this.actions){
-            this.actions = [];
-            this.widgets
-            .filter(function(widget){
-                return widget.active;
-            })
-            .forEach(function(widget){
-                this.actions = this.actions.concat(widget.actions);
-            }.bind(this)
-
-            );                
-        }
-        var ret = this.actions.filter(function(action){
-            return action.showAsAction === showType || showType === undefined;
-        });
-        return ret;
-    };
+     "expression" : "Container.hasCheckedRows()"
+  ```
   
+  >>> #### 1.2.7.getActionsTypeToShow():
+  This method returns the checked rows. Example:
+  >>
+  >
+  
+  ```javascript
+     "expression" : "Container.getActionsTypeToShow()"
+  ```
+  
+  >>> #### 1.2.8.getActions("showType"):
+  This method "gets" the actions of container. Example:
+  >>
+  >
+  
+  ```javascript
+     "expression" : "Container.getActions("showType")"
   ```
 
 >>###1.3.Events
@@ -1049,210 +1038,156 @@
 >>###2.2.Methods
  The methods are the functions of the widgets. They can be found in the widget class(var Widget = function() { ), in main.js. 
 >> ####2.2.1.moveToFirst():
->> This method moves the current row to first row. Implementation:
+>> This method moves the current row to first row. Example:
 >>
 >
 
 ```javascript
-        this.moveToFirst = function(){
-        this.setCurrentRow(this.dataSource.getFirstRow());
-    }
+   "expression" : "Widget.moveToFirst()"     
 ```
 
 >> ####2.2.2.getParent():
->> This method gets the parent widget. Implementation:
+>> This method gets the parent widget. Example:
 >>
 >
 
 ```javascript
-        this.getParent = function(){
-        return this.container;
-    }
+   "expression" : "Widget.getParent()"     
 ```
 
 >> ####2.2.3.moveToLast():
->> This method moves the current row to last row. Implementation:
+>> This method moves the current row to last row. Example:
 >>
 >
 
 ```javascript
-        this.moveToLast = function(){
-        this.setCurrentRow(this.dataSource.getLastRow());
-    }
+   "expression" : "Widget.moveToLast()"     
 ```
 
 >> ####2.2.4.getDataSourceFilter():
->> This method gets the DataSource filter. Implementation:
+>> This method gets the DataSource filter. Example:
 >>
 >
 
 ```javascript
-        this.getDataSourceFilter = function(){
-        if(this.dataSourceFilter){
-            result = Util.clone(this.dataSourceFilter).map(function(item){
-                var tempItem = Util.clone(item);
-                tempItem.value = Util.evaluate(tempItem .value);
-                return tempItem;
-            });
-        }else{
-            result = [];
-        }
-        return result;
-    }
+   "expression" : "Widget.getDataSourceFilter()"     
 ```
 
 >> ####2.2.5.reload():
->> This method reload the widget. Implementation:
+>> This method reload the widget. Example:
 >>
 >
 
 ```javascript
-        this.reload =  function(){
-        if(this.dataSource){
-            return this.dataSource.load(this.getDataSourceFilter(), 1, this.container.refresh);
-        } else {
-            return {
-                then : function(fullfil){
-                    return fullfil ? fullfil() : this;
-                }
-            };
-        }
-    }
+    "expression" : "Widget.reload()"     
 ```
 
 >> ####2.2.6.nextPage():
->> Implementation:
+>> This method go to next page.Example:
 >>
 >
 
 ```javascript
-        this.nextPage =  function(){
-        if(this.dataSource)
-            this.dataSource.load(this.getDataSourceFilter(), this.dataSource.getNextPage());
-    }
+   "expression" : "Widget.nextPage()"  
 ```
 
 >> ####2.2.7.order():
->> This method sorts the widget. Implementation:
+>> This method sorts the widget. Example:
 >>
 >
 
 ```javascript
-        this.order =  function(){
-    }
+   "expression" : "Widget.order()"  
 ```
 
 >> ####2.2.8.saveRow():
->> This method saves the row. Implementation:
+>> This method saves the row. Example:
 >>
 >
 
 ```javascript
-        this.saveRow =  function(){
-        if (this.currentRow) {
-            this.currentRow.changed = true;
-            if(this.dataSource.data.indexOf(this.currentRow) === -1){
-                this.dataSource.data.push(this.currentRow);
-            }
-            return this.dataSource.save();
-        } else {
-            throw 'Current row is undefinded. Unable to save row.';
-        }
-    }
+   "expression" : "Widget.saveRow()"  
 ```
 
 >> ####2.2.9.newRow():
->>This method creates a new row. Implementation:
+>>This method creates a new row. Example:
 >>
 >
 
 ```javascript
-       this.newRow =  function(){
-        if(this.dataSource){
-            this.dataSource.newRow();
-            // this.setCurrentRow(this.dataSource.data.length-1);
-            var data = this.dataSource.data;
-            this.setCurrentRow(data[data.length-1]);
-            for (var i in this.fields) {
-                if (this.fields.hasOwnProperty(i)) {
-                    item = this.fields[i];
-                    item.applyDefaultValue();
-                }
-            }
-
-            this.editing = true;
-        }
-    }
+   "expression" : "Widget.newRow()"  
 ```
 
 >> ####2.2.10.lastIntex():
->> Implementation:
+>> Example:
 >>
 >
 
 ```javascript
-        this.lastIntex =  function(){
-        return this.dataSource.length -1;
-    }
+   "expression" : "Widget.lastIndex()"  
 ```
 
 >> ####2.2.11.remove():
->> This method removes the widget. Implementation:
+>> This method removes the widget. Example:
 >>
 >
 
 ```javascript
-       this.remove =  function(){
-        this.dataSource.remove(this.currentRow).then((function() {
-            this.reload();
-        }).bind(this));
-    }
+    "expression" : "Widget.remove()"  
 ```
 
 >> ####2.2.12.sync():
->> This method synchronizes the widget. Implementation:
+>> This method synchronizes the widget. Example:
 >>
 >
 
 ```javascript
-        this.sync =  function(){
-        if (this.onSync) {
-            this.onSync();
-        }
-        return this.dataSource.sync();
-    }
+   "expression" : "Widget.sync()"  
 ```
 
 >> ####2.2.13.setCurrentRow():
->> This method sets the current row. Implementation:
+>> This method sets the current row. Example:
 >>
 >
 
 ```javascript
-        this.setCurrentRow = function(row){
-        if(this.beforeMoveRow){
-            this.beforeMoveRow();
-        }
-        // this.currentRowIdex = index;
-        this.currentRow = row;
-        //this.oldValues = Util.clone(row);
-        if(this.afterMoveRow){
-            this.afterMoveRow();
-        }
-    }
+   "expression" : "Widget.setCurrentRow()"  
 ```
 
 >> ####2.2.14.getField():
->> This methods gets a field of the widget. Implementation:
+>> This method gets a field of the widget. Example:
 >>
 >
 
 ```javascript
-       this.getField =  function(name){
-        return this.fields.filter(function(item){
-            return item.name === name;
-        })[0];
-    }
+   "expression" : "Widget.getField()"  
+```
+
+>> ####2.2.15.getActions():
+>> This method returns the actions of the widget. Example:
+>>
+>
+
+```javascript
+   "expression" : "Widget.getActions()"  
+```
+
+>> ####2.2.16.isValid():
+>> This method validates a field. Example:
+>>
+>
+
+```javascript
+   "expression" : "Widget.isValid()"  
+```
+
+>> ####2.2.17.hasCheckedRows():
+>> This method verifies if the rows were checked. Example:
+>>
+>
+
+```javascript
+   "expression" : "Widget.hasCheckedRows()"  
 ```
 
 >>###2.3.Events
@@ -1852,98 +1787,66 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
 >>###3.2.Methods
  The methods are the functions of the fields. They can be found in the field class(var Field = function() { ), in main.js. 
  >>> ####3.2.1.reload():
-  This method reload the datasource. Implementation:
+  This method reloads the datasource. Example:
   >>
   >
   
   ```javascript
-        this.reload = function(){ // reload function
-        if(this.dataSource)
-            return this.dataSource.load(this.dataSourceFilter);
-            // return the loaded Datasource
-        else {
-            return {
-                then : function(fullfil){
-                    fullfil ? fullfil() : null;
-                }
-            };
-        }
-    }
+     "expression" : "Field.reload()"
     ```
-  
+    
  >>> ####3.2.2.getDatasource():
-  This method gets the Datasource. Implementation:
+  This method gets the Datasource. Example:
  >>
  >
  
  ```javascript
-        this.getDatasource = function(){
-    }
+    "expression" : "Field.getDataSource()"
     ```
     
 >>> ####3.2.3.show():
- This method shows the field. Implementation:
+ This method shows the field. Example:
  >>
  >
  
  ```javascript
-        this.show = function(){
-    }
+    "expression" : "Field.show()"
     ```
     
 >>> ####3.2.4.hide():
- This method hides the field. Implementation:
+ This method hides the field. Example:
  >>
  >
  
  ```javascript
-        this.hide = function(){
-    }
+     "expression" : "Field.hide()"
     ```
     
 >>> ####3.2.5.getParent():
- This method gets the parent field. Implementation:
+ This method gets the parent field. Example:
  >>
  >
  
  ```javascript
-        this.getParent = function(){
-        return this.widget; // return the widget in which the field is
-    }
+    "expression" : "Field.getParent()"
     ```
     
->>> ####3.2.6.setCurrentRow():
- This method sets the current row. Implementation:
+>>> ####3.2.6.setCurrentRow("row"):
+ This method sets the current row. Example:
  >>
  >
  
  ```javascript
-        this.setCurrentRow = function(row){
-        if(this.beforeMoveRow){
-            this.beforeMoveRow();
-        }
-        // this.currentRowIdex = index;
-        this.currentRow = row;
-        //this.oldValues = Util.clone(row);
-        if(this.afterMoveRow){
-            this.afterMoveRow();
-        }
-    }
+    "expression" : "Field.setCurrentRow("row")"
     ```
     
->>> ####3.2.7.value():
-  This method sets a value in the field. Implementation:
+>>> ####3.2.7.value("value"):
+  This method sets a value in the field. Example:
  >>
  >
  
  ```javascript
-        this.vlaue = function(value){
-        if( typeof value !== "undefined"){
-            this.widget.currentRow[this.name] = value;
-        }else{
-            return this.widget.currentRow[this.name];
-        }
-    }
+    "expression" : "Field.value("value)"
     ```
     
 >>> ####3.2.8.applyDefaultValue():
@@ -1952,9 +1855,7 @@ An editable text field. Basic parameters: "name", "label", "class", "id", "isRea
  >
  
  ```javascript
-        this.applyDefaultValue = function(){
-         this.widget.currentRow[this.name] = this.defaultValue === undefined ? "" : Util.evaluate(this.defaultValue);
-    }
+    "expression" : "applyDefaultValue()"
     ```    
 
 
@@ -2591,7 +2492,7 @@ This method cancel the changes on the widgets. Example:
  
  ```javascript
                 
-                "expression" : "ScreenService.changeFilter()"
+                "expression" : "ScreenService.changeFilter("widget")"
     
  ```
 
@@ -2601,7 +2502,7 @@ This method cancel the changes on the widgets. Example:
  
  ```javascript
                 
-                "expression" : "ScreenService.toogleFilter()"
+                "expression" : "ScreenService.toogleFilter("widget")"
     
  ```
 
