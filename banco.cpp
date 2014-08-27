@@ -23,16 +23,18 @@ class ContaBancaria {
 
 class ContaCorrente : ContaBancaria {
     public:
+        ContaCorrente(float sal){
+            saldo = sal;    
+        }
+		
+		ContaCorrente() {}
+		        
         float getSaldo() {
             ContaBancaria::getSaldo();
         }
 
         void setSaldo(float sal) {
             ContaBancaria::setSaldo(sal);
-        }
-
-        ContaCorrente(float sal) { //construtor
-            saldo = sal;
         }
 
         void sacar(float dinheiro) {
@@ -54,17 +56,15 @@ class ContaCorrente : ContaBancaria {
 
 };
 
-//Esta classe é uma coleção de 3 termômetros que pode ser utilizada
-//para fazer contas com eles. No caso, o método mediaTemperatura()
-//calcula a média da temperatura dos 3 termônetros;
 class Cliente {
     private:
-        ContaCorrente contas[];
+        ContaCorrente conta;
 
 
     public:
-        Cliente(ContaCorrente[] con, int numContas){ //construtor
-            contas = (ContaCorrente)malloc(numContas * sizeof(con));
+    	Cliente();
+        Cliente(ContaCorrente con){ //construtor
+            conta = con;
         }
 
         void salvar() {
@@ -74,18 +74,15 @@ class Cliente {
                 cout << "Erro no arquivo";
                 exit(1);
             }
-            arq << contas;
+            arq.write(reinterpret_cast<char*>(&conta), sizeof(ContaCorrente));
             arq.close();
         }
 
         void lerContas() {
-            infile.open("conta.dat");
+            ifstream infile;
+            infile.open("conta.dat", ios::binary);
             if (infile.is_open() && infile.good()) {
-                infile >> data;
-                while(!infile.fail()) {
-                    infile >> data;
-                    cout << data;
-                }
+                infile.read(reinterpret_cast<char*>(&conta),sizeof(conta));
                 infile.close();
             }
         }
@@ -93,17 +90,20 @@ class Cliente {
 };
 
 int main(){
-    ContaCorrente* conta = new CO
-
-    TermometroKelvin kelvin[3];
-    kelvin[0] = TermometroKelvin(312);
-    kelvin[1] = TermometroKelvin(233);
-    kelvin[2] = TermometroKelvin(300);
-
-    ColecaoTermometros colecao(kelvin);
-
-    cout << colecao.mediaTemperatura();
-    colecao.salvaColecao();
+    ContaCorrente* conta1 = new ContaCorrente(0);
+    ContaCorrente* conta2 = new ContaCorrente(0);
+    conta1->depositar(100.50);
+    conta1->sacar(12);
+    conta2->depositar(50);
+    conta2->sacar(100);
+    
+    //ContaCorrente vetor[2];
+    //vetor[0] = conta1;
+    //vetor[1] = conta2;
+    Cliente* cliente = new Cliente(*conta1);
+    cliente->salvar();
+    
+    cliente->lerContas();
     return 0;
 }
 
