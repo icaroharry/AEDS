@@ -1,0 +1,109 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <fstream>
+
+
+using namespace std;
+
+class ContaBancaria {
+    protected:
+        float saldo;
+
+    public:
+        float getSaldo(){ //getter
+            return saldo;
+        }
+
+        void setSaldo(float sal) { //setter
+            saldo = sal;
+        }
+
+};
+
+class ContaCorrente : ContaBancaria {
+    public:
+        float getSaldo() {
+            ContaBancaria::getSaldo();
+        }
+
+        void setSaldo(float sal) {
+            ContaBancaria::setSaldo(sal);
+        }
+
+        ContaCorrente(float sal) { //construtor
+            saldo = sal;
+        }
+
+        void sacar(float dinheiro) {
+            if(dinheiro <= saldo) {
+                saldo -= dinheiro;
+                cout << "Você sacou " << dinheiro << "reais" << endl;
+            }
+            else {
+                cout << "Saldo insuficiente!" << endl;
+            }
+        }
+
+        void depositar(float dinheiro) {
+            saldo += dinheiro;
+            cout << "Você depositou " << dinheiro << "reais" << endl;
+        }
+
+
+
+};
+
+//Esta classe é uma coleção de 3 termômetros que pode ser utilizada
+//para fazer contas com eles. No caso, o método mediaTemperatura()
+//calcula a média da temperatura dos 3 termônetros;
+class Cliente {
+    private:
+        ContaCorrente contas[];
+
+
+    public:
+        Cliente(ContaCorrente[] con, int numContas){ //construtor
+            contas = (ContaCorrente)malloc(numContas * sizeof(con));
+        }
+
+        void salvar() {
+            ofstream arq;
+            arq.open("conta.dat", ios::binary | ios::app);
+            if(arq.fail()==1) {
+                cout << "Erro no arquivo";
+                exit(1);
+            }
+            arq << contas;
+            arq.close();
+        }
+
+        void lerContas() {
+            infile.open("conta.dat");
+            if (infile.is_open() && infile.good()) {
+                infile >> data;
+                while(!infile.fail()) {
+                    infile >> data;
+                    cout << data;
+                }
+                infile.close();
+            }
+        }
+
+};
+
+int main(){
+    ContaCorrente* conta = new CO
+
+    TermometroKelvin kelvin[3];
+    kelvin[0] = TermometroKelvin(312);
+    kelvin[1] = TermometroKelvin(233);
+    kelvin[2] = TermometroKelvin(300);
+
+    ColecaoTermometros colecao(kelvin);
+
+    cout << colecao.mediaTemperatura();
+    colecao.salvaColecao();
+    return 0;
+}
+
