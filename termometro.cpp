@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <fstream>
 
 
 using namespace std;
@@ -55,10 +56,23 @@ class ColecaoTermometros {
             TermometroKelvin* pont = termometros;
             float soma = 0;
             for(int i = 0; i < 3; i++) {
-                soma += termometros[i].getTemperatura(); //acessa o vetor utilizando ponteiro
+                soma += pont[i].getTemperatura(); //acessa o vetor utilizando ponteiro
             }
             return soma/3;
         }
+
+        //Este método salva a colecao de termômetros em um arquivo binário
+        void salvaColecao() {
+            ofstream arq;
+            arq.open("termometros.dat", ios::binary | ios::app);
+            if(arq.fail()==1) {
+                cout << "Erro no arquivo";
+                exit(1);
+            }
+            arq << termometros;
+            arq.close();
+        }
+
 };
 
 int main(){
@@ -70,5 +84,6 @@ int main(){
     ColecaoTermometros colecao(kelvin);
 
     cout << colecao.mediaTemperatura();
+    colecao.salvaColecao();
     return 0;
 }
